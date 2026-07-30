@@ -73,7 +73,7 @@ ne jamais placer deux bandes identiques côte à côte.
 
 ## À compléter dès que les données existent
 
-- [ ] Numéro d'entreprise BCE (actuellement « en cours d'attribution », en pied de page)
+- [x] Numéro d'entreprise BCE : 1040.785.551
 - [ ] Date exacte de constitution de l'ASBL (actuellement « 2026 » dans la frise)
 - [ ] Montant de la cotisation de membre
 - [ ] Numéro de compte bancaire de l'ASBL, pour rendre le soutien opérant
