@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L'Odyssée de l'environnement — Éco-innovation Belgique · Afrique centrale</title>
+<meta name="description" content="ASBL belgo-camerounaise d'éco-innovation. Mobilisation citoyenne, Green Hackathon, incubation des équipes lauréates. Bruxelles, Yaoundé, Kinshasa.">
+<meta property="og:title" content="L'Odyssée de l'environnement">
+<meta property="og:description" content="La technique existe. Ce qui manque, c'est l'organisation.">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/hero.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F3D2A'/%3E%3Cpath d='M16 26V10' stroke='%23A8D64B' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M16 16c0-4.4 3.6-8 8-8 0 4.4-3.6 8-8 8zM16 21c0-4.4-3.6-8-8-8 0 4.4 3.6 8 8 8z' fill='%23A8D64B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#0F3D2A; --forest-deep:#071A13; --leaf:#1F9D55; --lime:#A8D64B;
+    --lime-soft:#E8F3D6; --ochre:#E8871E; --ochre-soft:#FCEBD5;
+    --cream:#F4F8EF; --white:#fff; --ink:#12251C; --muted:#546A5C;
+    --line:rgba(15,61,42,.12);
+    --shadow:0 20px 50px -24px rgba(7,26,19,.4);
+    --shadow-sm:0 10px 26px -16px rgba(7,26,19,.35);
+    --display:"Fraunces",Georgia,serif; --body:"Inter","Helvetica Neue",Arial,sans-serif;
+    --r:20px; --maxw:1180px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  svg{display:block}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  h1,h2,h3,h4{font-family:var(--display);font-weight:600;margin:0;letter-spacing:-.02em;line-height:1.1}
+  h2{font-size:clamp(31px,4.4vw,50px);color:var(--forest)}
+  h3{font-size:22px;line-height:1.24;color:var(--forest)}
+  p{margin:0 0 1.05em}
+  .lead{font-size:clamp(17.5px,1.75vw,20px);line-height:1.65}
+  .muted{color:var(--muted)}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--leaf);margin:0 0 14px;display:flex;align-items:center;gap:9px}
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--lime);flex:none}
+  .eyebrow--light{color:var(--lime)}
+
+  /* nav */
+  header.nav{position:sticky;top:0;z-index:70;background:rgba(244,248,239,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:72px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+  .brand .badge{width:40px;height:40px;border-radius:12px;background:var(--forest);display:grid;place-items:center;flex:none}
+  .brand .badge svg{width:24px;height:24px}
+  .brand b{font-family:var(--display);font-weight:600;font-size:16px;color:var(--forest);line-height:1.2}
+  .brand small{display:block;font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--leaf);margin-top:2px}
+  .nav-right{display:flex;align-items:center;gap:26px}
+  .nav-links{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+  .nav-links a{font-size:14.5px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--leaf)}
+  .nav-toggle{display:none;width:44px;height:44px;border:1.5px solid var(--line);border-radius:12px;background:var(--white);cursor:pointer;align-items:center;justify-content:center;flex:none;padding:0}
+  .nav-toggle svg{width:22px;height:22px;color:var(--forest)}
+  .nav-toggle[aria-expanded="true"] .ico-menu{display:none}
+  .nav-toggle[aria-expanded="false"] .ico-close{display:none}
+  .nav-panel{display:none;position:fixed;inset:72px 0 0 0;background:rgba(244,248,239,.98);backdrop-filter:blur(12px);z-index:60;overflow-y:auto;padding:28px 26px 40px;border-top:1px solid var(--line)}
+  .nav-panel.open{display:block}
+  .nav-panel ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+  .nav-panel a{display:block;padding:14px 16px;border-radius:14px;font-size:16px;font-weight:500;color:var(--forest);text-decoration:none}
+  .nav-panel a:hover,.nav-panel a:focus-visible{background:var(--lime-soft);color:var(--leaf)}
+  .nav-panel .panel-cta{margin-top:18px}
+  @media(max-width:1100px){.nav-links{display:none}.nav-toggle{display:inline-flex}.nav-right .btn-leaf{display:none}}
+  @media(max-width:380px){.wrap{padding:0 18px}.nav-panel{padding:22px 18px 36px}}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;font-size:14.5px;font-weight:600;text-decoration:none;padding:14px 24px;border-radius:999px;border:1.5px solid transparent;transition:transform .18s,background .2s,color .2s;white-space:nowrap}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-leaf{background:var(--leaf);color:#fff}
+  .btn-leaf:hover{background:#188546}
+  .btn-ochre{background:var(--ochre);color:#fff}
+  .btn-ochre:hover{background:#cf7514}
+  .btn-line{border-color:rgba(255,255,255,.4);color:#fff}
+  .btn-line:hover{background:rgba(255,255,255,.14)}
+  .btn-dark{border-color:var(--forest);color:var(--forest)}
+  .btn-dark:hover{background:var(--forest);color:#fff}
+  .btn-sm{padding:11px 20px;font-size:13.5px}
+
+  /* hero photo */
+  .hero{position:relative;min-height:min(84vh,720px);display:flex;align-items:flex-end;overflow:hidden;background:var(--forest-deep)}
+  .hero-bg{position:absolute;inset:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,26,19,.62) 0%,rgba(7,26,19,.5) 38%,rgba(7,26,19,.93) 100%)}
+  .hero-inner{position:relative;z-index:2;padding:120px 0 54px;color:#fff;width:100%}
+  .hero h1{font-size:clamp(34px,5.3vw,62px);line-height:1.04;margin:0 0 20px;max-width:20ch;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+  .hero h1 em{font-style:italic;color:var(--lime)}
+  .hero .hero-lead{font-size:clamp(16.5px,1.8vw,19px);color:rgba(255,255,255,.88);max-width:54ch;margin-bottom:28px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+  .hero-cap{margin-top:30px;font-size:12.5px;color:rgba(255,255,255,.6);max-width:60ch;line-height:1.5}
+
+  /* bande de chiffres */
+  .stats-holder{background:var(--cream)}
+  .stats{background:var(--white);border-radius:var(--r);box-shadow:var(--shadow);margin-top:-46px;position:relative;z-index:5;display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
+  .stat{padding:28px 24px;border-right:1px solid var(--line)}
+  .stat:last-child{border-right:0}
+  .stat .n{font-family:var(--display);font-size:42px;font-weight:600;line-height:1;color:var(--leaf);display:block;letter-spacing:-.03em}
+  .stat .l{font-size:13.5px;color:var(--muted);line-height:1.45;margin-top:8px;display:block}
+  @media(max-width:840px){.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}}
+  @media(max-width:460px){.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}}
+
+  section{padding:clamp(58px,7vw,100px) 0}
+  .b-cream{background:var(--cream)} .b-white{background:var(--white)}
+  .b-forest{background:var(--forest);color:#fff}
+  .b-forest h2,.b-forest h3{color:#fff} .b-forest .muted{color:rgba(255,255,255,.74)}
+  .b-ochre{background:var(--ochre-soft)}
+  .sec-head{max-width:62ch;margin-bottom:44px}
+  .sec-head h2{margin-bottom:15px}
+  .grid{display:grid;gap:26px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:1.05fr .95fr}
+  @media(max-width:920px){.g3,.g2{grid-template-columns:1fr}}
+
+  figure{margin:0}
+  figcaption{font-size:13px;color:var(--muted);line-height:1.5;margin-top:9px}
+  .b-forest figcaption{color:rgba(255,255,255,.62)}
+  .ph{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm);background:#dfe6da}
+  .ph img{width:100%;height:100%;object-fit:cover}
+
+  /* mission */
+  .mission{display:grid;grid-template-columns:1fr .88fr;gap:52px;align-items:center}
+  @media(max-width:920px){.mission{grid-template-columns:1fr;gap:32px}}
+  .quote{font-family:var(--display);font-size:clamp(20px,2.2vw,25px);line-height:1.38;color:var(--forest);border-left:4px solid var(--lime);padding-left:22px;margin:0 0 22px;font-style:italic}
+
+  /* cartes */
+  .card{background:var(--white);border-radius:var(--r);box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;transition:transform .22s,box-shadow .22s}
+  .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .card-art{aspect-ratio:4/3;overflow:hidden;background:#dfe6da}
+  .card-art img{width:100%;height:100%;object-fit:cover}
+  .card-body{padding:24px 26px 28px}
+  .card-body .num{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--leaf);display:block;margin-bottom:8px}
+  .card-body h3{margin-bottom:10px}
+  .card-body p{font-size:15.6px;color:var(--muted);margin:0}
+
+  /* déroulé en 3 temps */
+  .steps{display:grid;gap:22px;grid-template-columns:repeat(3,1fr)}
+  @media(max-width:920px){.steps{grid-template-columns:1fr}}
+  .step{background:rgba(255,255,255,.06);border:1px solid rgba(168,214,75,.24);border-radius:var(--r);overflow:hidden}
+  .step .im{aspect-ratio:3/2;overflow:hidden;background:#123}
+  .step .im img{width:100%;height:100%;object-fit:cover}
+  .step .tx{padding:22px 24px 26px}
+  .step .dt{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);display:block;margin-bottom:8px}
+  .step h3{font-size:20px;margin-bottom:9px}
+  .step p{font-size:15.2px;color:rgba(255,255,255,.74);margin:0}
+
+  /* galerie */
+  .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .gal figure{grid-column:span 1}
+  .gal .tall{grid-row:span 2}
+  .gal .ph{height:100%}
+  @media(max-width:860px){.gal{grid-template-columns:repeat(2,1fr)}}
+
+  /* lauréats */
+  .lau{background:var(--white);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm);border-top:4px solid var(--ochre);display:flex;flex-direction:column}
+  .lau .im{aspect-ratio:4/3;overflow:hidden;background:#dfe6da}
+  .lau .im img{width:100%;height:100%;object-fit:cover}
+  .lau .tx{padding:24px 26px 28px}
+  .lau .prix{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+  .lau h3{margin-bottom:6px;font-size:21px}
+  .lau .eq{font-size:13.5px;color:var(--leaf);font-weight:600;margin-bottom:12px}
+  .lau p{font-size:15.4px;color:var(--muted);margin:0 0 .8em}
+  .lau p:last-child{margin-bottom:0}
+
+  /* projet */
+  .project{background:var(--white);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+  .project .im{aspect-ratio:16/9;overflow:hidden;background:#dfe6da}
+  .project .im img{width:100%;height:100%;object-fit:cover}
+  .project-head{background:var(--forest);color:#fff;padding:26px 32px}
+  .project-head .flag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--ochre);color:#fff;padding:6px 13px;border-radius:999px;margin-bottom:14px}
+  .project-head h3{font-size:clamp(24px,2.6vw,30px);color:#fff;margin-bottom:7px}
+  .project-head .when{font-size:14.5px;color:var(--lime);font-weight:600;margin:0}
+  .project-body{padding:28px 32px 32px}
+  .project-body p{font-size:15.8px;color:var(--muted)}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0 24px}
+  .chip{font-size:13.5px;font-weight:500;padding:9px 15px;border-radius:999px;background:var(--lime-soft);color:var(--forest)}
+  .next-list{list-style:none;margin:0;padding:0}
+  .next-list li{display:flex;gap:15px;align-items:flex-start;padding:17px 0;border-bottom:1px solid var(--line)}
+  .next-list li:last-child{border-bottom:0}
+  .next-list .dot{width:11px;height:11px;border-radius:50%;background:var(--lime);margin-top:8px;flex:none}
+  .next-list b{font-family:var(--display);font-weight:600;font-size:19px;color:var(--forest);display:block;line-height:1.25}
+  .next-list span{font-size:14.6px;color:var(--muted)}
+
+  /* frise */
+  .tl{list-style:none;margin:0;padding:0;position:relative}
+  .tl::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:rgba(168,214,75,.28)}
+  .tl>li{position:relative;padding:0 0 28px 40px}
+  .tl>li:last-child{padding-bottom:0}
+  .tl .pin{position:absolute;left:0;top:7px;width:16px;height:16px;border-radius:50%;background:var(--forest);border:2.5px solid var(--lime)}
+  .tl .pin.filled{background:var(--lime)}
+  .tl .d{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);display:block;margin-bottom:5px}
+  .tl .t{font-family:var(--display);font-weight:600;font-size:19.5px;color:#fff;display:block;line-height:1.25;margin-bottom:5px}
+  .tl .s{font-size:15px;color:rgba(255,255,255,.7);display:block}
+  .tl li.mark{background:rgba(168,214,75,.1);border:1px solid rgba(168,214,75,.3);border-radius:16px;padding:22px 24px 22px 52px}
+  .tl li.mark .pin{left:16px;top:28px}
+  .ante-ph{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+  @media(max-width:760px){.ante-ph{grid-template-columns:1fr}}
+  .note{margin-top:30px;background:rgba(255,255,255,.07);border-left:3px solid var(--ochre);border-radius:0 14px 14px 0;padding:20px 24px;font-size:15.3px;color:rgba(255,255,255,.78);max-width:84ch}
+
+  /* partenaires */
+  .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media(max-width:820px){.pgrid{grid-template-columns:1fr}}
+  .pcard{background:var(--white);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden;display:grid;grid-template-columns:150px 1fr}
+  .pcard .im{background:#dfe6da;min-height:100%}
+  .pcard .im img{width:100%;height:100%;object-fit:cover;min-height:170px}
+  .pcard .tx{padding:22px 24px}
+  .pcard .k{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--leaf);margin-bottom:6px}
+  .pcard .w{font-family:var(--display);font-weight:600;font-size:18.5px;color:var(--forest);line-height:1.25;margin:0}
+  .pcard .who{font-size:14.5px;color:var(--ochre);font-weight:600;margin:4px 0 0}
+  .pcard .dd{font-size:14.2px;color:var(--muted);margin-top:7px;display:block;line-height:1.5}
+  @media(max-width:520px){.pcard{grid-template-columns:1fr}.pcard .im img{min-height:200px}}
+  .mentors{background:var(--white);border-radius:18px;box-shadow:var(--shadow-sm);padding:26px 28px;margin-top:20px}
+  .mentors h3{font-size:19px;margin-bottom:10px}
+  .mentors p{font-size:15.3px;color:var(--muted);margin:0}
+
+  /* soutenir */
+  .sup{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:920px){.sup{grid-template-columns:1fr}}
+  .scard{background:var(--white);border-radius:var(--r);padding:28px 26px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+  .scard .ic{width:46px;height:46px;border-radius:14px;background:var(--ochre-soft);display:grid;place-items:center;margin-bottom:16px}
+  .scard .ic svg{width:24px;height:24px}
+  .scard h3{margin-bottom:10px;font-size:20px}
+  .scard p{font-size:15.3px;color:var(--muted)}
+  .scard ul{margin:0 0 18px;padding-left:19px;font-size:15.3px;color:var(--muted)}
+  .scard li{margin-bottom:6px}
+  .scard .btn{margin-top:auto;align-self:flex-start}
+
+  /* contact */
+  .cgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px}
+  @media(max-width:920px){.cgrid{grid-template-columns:1fr;gap:34px}}
+  .board{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+  @media(max-width:620px){.board{grid-template-columns:1fr}}
+  .board li{background:var(--white);border-radius:14px;padding:17px 19px;box-shadow:var(--shadow-sm)}
+  .board .fn{font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--leaf);display:block;margin-bottom:4px}
+  .board .nm{font-family:var(--display);font-weight:600;font-size:17px;color:var(--forest)}
+  .coord{list-style:none;margin:0;padding:0;background:var(--white);border-radius:var(--r);box-shadow:var(--shadow-sm);overflow:hidden}
+  .coord li{padding:19px 22px;border-bottom:1px solid var(--line);display:flex;gap:15px;align-items:flex-start}
+  .coord li:last-child{border-bottom:0}
+  .coord .ic{width:36px;height:36px;border-radius:11px;background:var(--lime-soft);display:grid;place-items:center;flex:none}
+  .coord .ic svg{width:18px;height:18px}
+  .coord .k{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--leaf);display:block;margin-bottom:3px}
+  .coord a{color:var(--forest);text-decoration:none;border-bottom:1.5px solid var(--lime);font-weight:500;word-break:break-word}
+  .coord a:hover{color:var(--leaf)}
+
+  footer{background:var(--forest-deep);color:rgba(255,255,255,.6);padding:42px 0 34px;font-size:14px}
+  .foot{display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;align-items:flex-end}
+  footer b{font-family:var(--display);font-weight:600;color:#fff;font-size:18px;display:block;margin-bottom:6px}
+  .foot-links{display:flex;flex-wrap:wrap;gap:14px 22px;margin-top:10px}
+  .foot-links a{color:rgba(255,255,255,.72);text-decoration:none;border-bottom:1px solid rgba(168,214,75,.35)}
+  .foot-links a:hover{color:var(--lime)}
+
+  a:focus-visible,button:focus-visible{outline:2.5px solid var(--lime);outline-offset:3px}
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{left:16px;top:12px;z-index:99;background:#fff;color:var(--forest);padding:10px 16px;border-radius:8px}
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .75s ease,transform .75s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .btn:hover,.card:hover{transform:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <span class="badge"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27V11" stroke="#A8D64B" stroke-width="2.4" stroke-linecap="round"/><path d="M16 17c0-4.4 3.6-8 8-8 0 4.4-3.6 8-8 8zM16 22c0-4.4-3.6-8-8-8 0 4.4 3.6 8 8 8z" fill="#A8D64B"/></svg></span>
+      <span><b>L'Odyssée de l'environnement</b><small>ASBL · Bruxelles – Yaoundé</small></span>
+    </a>
+    <div class="nav-right">
+      <nav aria-label="Navigation principale">
+        <ul class="nav-links">
+          <li><a href="#association">L'association</a></li>
+          <li><a href="#domaines">Nos domaines</a></li>
+          <li><a href="#edition">L'édition 2026</a></li>
+          <li><a href="#laureats">Les lauréats</a></li>
+          <li><a href="#projet">Projet en cours</a></li>
+          <li><a href="#partenaires">Partenaires</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-leaf btn-sm" href="#soutenir">Nous soutenir</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Ouvrir le menu">
+        <svg class="ico-menu" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="ico-close" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<nav class="nav-panel" id="nav-panel" aria-label="Navigation mobile" hidden>
+  <ul>
+    <li><a href="#association">L'association</a></li>
+    <li><a href="#domaines">Nos domaines</a></li>
+    <li><a href="#edition">L'édition 2026</a></li>
+    <li><a href="#laureats">Les lauréats</a></li>
+    <li><a href="#projet">Projet en cours</a></li>
+    <li><a href="#anteriorite">Antériorité</a></li>
+    <li><a href="#partenaires">Partenaires</a></li>
+    <li><a href="#soutenir">Nous soutenir</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="btn btn-leaf panel-cta" href="#soutenir">Nous soutenir</a>
+</nav>
+
+<main id="contenu">
+
+<!-- ===================== HERO ===================== -->
+<div class="hero" id="top">
+  <div class="hero-bg">
+    <img src="images/hero.jpg" alt="Lauréats, participants, jury et organisation du Green Hackathon Yaoundé 2026, certificats en main, réunis au LTIC de Yaoundé">
+  </div>
+  <div class="hero-inner">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--light">Éco-innovation &amp; solidarité · Belgique – Afrique centrale</p>
+      <h1>La technique existe. Ce qui manque, c'est <em>l'organisation</em>.</h1>
+      <p class="hero-lead">Dans les quartiers de Yaoundé, les déchets s'accumulent alors que les solutions sont connues. Nous réunissons pendant deux jours des habitants, des étudiants et des ingénieurs pour concevoir des réponses utilisables sur place — puis nous accompagnons les équipes retenues pendant deux ans.</p>
+      <div class="hero-actions">
+        <a class="btn btn-ochre" href="#edition">Voir l'édition 2026
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-line" href="#soutenir">Nous soutenir</a>
+      </div>
+      <p class="hero-cap">Certificats en main : toute la famille du Green Hackathon Yaoundé 2026, au soir du Grand Oral, au Lycée technique industriel et commercial de Yaoundé.</p>
+    </div>
+  </div>
+</div>
+
+<div class="stats-holder">
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><span class="n">9</span><span class="l">Équipes pluridisciplinaires en compétition</span></div>
+      <div class="stat"><span class="n">10 h</span><span class="l">De sprint d'innovation, Grand Oral à la clé</span></div>
+      <div class="stat"><span class="n">4</span><span class="l">Partenaires institutionnels engagés</span></div>
+      <div class="stat"><span class="n">3</span><span class="l">Équipes lauréates sous convention de 24 mois</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== ASSOCIATION ===================== -->
+<section class="b-cream" id="association">
+  <div class="wrap mission">
+    <div class="reveal">
+      <p class="eyebrow">Qui nous sommes</p>
+      <h2 style="margin-bottom:20px">Une association belgo-camerounaise d'éco-innovation.</h2>
+      <p class="quote">« Quand la science, la diplomatie et l'énergie de la jeunesse s'unissent de concert, les barrières environnementales reculent pour laisser place à l'éco-innovation durable. »</p>
+      <p class="lead muted">L'Odyssée de l'environnement est une ASBL de droit belge, dont le siège est établi en Région de Bruxelles-Capitale. Elle poursuit et structure l'initiative fondée sous le nom <strong style="color:var(--forest);font-weight:600">L'Odyssée Express</strong> par Gédéon Sylvestre Tchuisseu, étudiant ingénieur à l'École polytechnique de Bruxelles (ULB).</p>
+      <p class="lead muted">Notre méthode vient du concours <em>L'Odyssée de l'Objet</em> du Service public de Wallonie : partir d'un problème réel, imposer un temps court, exiger un jury. Nous l'appliquons aux problèmes environnementaux urbains d'Afrique centrale, là où ils se posent, avec ceux qui les vivent.</p>
+      <a class="btn btn-dark" href="#anteriorite" style="margin-top:6px">Voir notre parcours</a>
+    </div>
+    <figure class="reveal">
+      <div class="ph" style="aspect-ratio:16/9"><img src="images/terrain.jpg" alt="Gédéon Tchuisseu, gilet orange, devant le Lycée de la Cité Verte à Yaoundé II" loading="lazy"></div>
+      <figcaption>Devant le Lycée de la Cité Verte, à Yaoundé II — point de départ de l'Opération Quartier Propre du vendredi 3 juillet 2026.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== DOMAINES ===================== -->
+<section class="b-white" id="domaines">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Nos domaines d'action</p>
+      <h2>Trois domaines, un enchaînement.</h2>
+      <p class="lead muted">Mobiliser le quartier, faire concevoir des solutions, accompagner celles qui tiennent la route. Chaque domaine alimente le suivant.</p>
+    </div>
+    <div class="grid g3">
+      <article class="card reveal">
+        <div class="card-art"><img src="images/dom1.jpg" alt="Éco-bénévoles en gilets réfléchissants réunis dans une rue de la Cité Verte" loading="lazy"></div>
+        <div class="card-body">
+          <span class="num">Domaine 01</span>
+          <h3>Mobilisation citoyenne</h3>
+          <p>Une opération de terrain avec les habitants : sensibilisation, distribution de sacs de tri, collecte, et relevé de la typologie des déchets rue par rue. Ces données deviennent la base technique du sprint du lendemain.</p>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card-art"><img src="images/dom2.jpg" alt="Équipe d'étudiants travaillant sur ordinateurs pendant le sprint d'innovation" loading="lazy"></div>
+        <div class="card-body">
+          <span class="num">Domaine 02</span>
+          <h3>Green Hackathon</h3>
+          <p>Dix heures de sprint, des équipes pluridisciplinaires d'informaticiens, d'ingénieurs et de designers, un encadrement méthodologique en éco-conception, et un Grand Oral devant jury officiel.</p>
+        </div>
+      </article>
+      <article class="card reveal">
+        <div class="card-art"><img src="images/dom3.jpg" alt="Équipe lauréate et jury du Green Hackathon réunis autour de l'écharpe belge" loading="lazy"></div>
+        <div class="card-body">
+          <span class="num">Domaine 03</span>
+          <h3>Incubation des lauréats</h3>
+          <p>Vingt-quatre mois d'accompagnement sous convention écrite : structuration, business plan, préparation au pitch, mise en réseau et recherche de financements. Les porteurs gardent tout — propriété intellectuelle et pouvoir de décision.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ÉDITION 2026 ===================== -->
+<section class="b-forest" id="edition">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow eyebrow--light">Édition inaugurale · juillet 2026 · sous le nom L'Odyssée Express</p>
+      <h2>Comment s'est déroulée la première édition.</h2>
+      <p class="lead muted">Conçue depuis Bruxelles, financée par le Bureau étudiant de Polytechnique et le Cercle polytechnique de Bruxelles (ULB), livrée à Yaoundé II en trois temps.</p>
+    </div>
+
+    <div class="steps">
+      <article class="step reveal">
+        <div class="im"><img src="images/part_mairie.jpg" alt="Audience officielle à la Mairie de Yaoundé II : le Maire et Gédéon Tchuisseu présentant les équipements de l'Opération Quartier Propre" loading="lazy"></div>
+        <div class="tx">
+          <span class="dt">Vendredi 19 juin 2026</span>
+          <h3>L'autorisation municipale</h3>
+          <p>Audience officielle à la Mairie de Yaoundé II, à Tsinga. Monsieur le Maire reçoit la délégation, délivre les autorisations nécessaires et mobilise les services techniques de la commune.</p>
+        </div>
+      </article>
+      <article class="step reveal">
+        <div class="im"><img src="images/gal2.jpg" alt="Sensibilisation et collecte au pied des immeubles de la Cité Verte" loading="lazy"></div>
+        <div class="tx">
+          <span class="dt">Vendredi 3 juillet 2026</span>
+          <h3>Opération Quartier Propre</h3>
+          <p>Une vague d'éco-bénévoles au cœur de la Cité Verte : gilets, gants, sacs de tri distribués aux ménages, sensibilisation porte à porte et collecte le long des artères du quartier.</p>
+        </div>
+      </article>
+      <article class="step reveal">
+        <div class="im"><img src="images/gal5.jpg" alt="Deux participantes travaillant sur un ordinateur portable pendant le hackathon" loading="lazy"></div>
+        <div class="tx">
+          <span class="dt">Samedi 4 juillet 2026</span>
+          <h3>Dix heures de sprint</h3>
+          <p>Au Lycée technique industriel et commercial de Yaoundé, neuf équipes venues de l'Université de Yaoundé I et des grandes écoles construisent applications web, plateformes logistiques et modèles économiques circulaires.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sec-head reveal" style="margin:62px 0 26px">
+      <h2 style="font-size:clamp(24px,2.6vw,32px)">L'édition en images</h2>
+    </div>
+    <div class="gal">
+      <figure class="reveal tall"><div class="ph"><img src="images/gal1.jpg" alt="Trois éco-bénévoles en pleine collecte au cœur du quartier" loading="lazy"></div><figcaption>Trois éco-bénévoles en pleine collecte au cœur du quartier.</figcaption></figure>
+      <figure class="reveal"><div class="ph"><img src="images/gal3.jpg" alt="Collecte des déchets le long des artères de la Cité Verte" loading="lazy"></div><figcaption>Collecte le long des artères de la Cité Verte.</figcaption></figure>
+      <figure class="reveal tall"><div class="ph"><img src="images/gal4.jpg" alt="Une équipe en pleine conception, accompagnée par un encadrant" loading="lazy"></div><figcaption>Une équipe en conception, accompagnée par un encadrant.</figcaption></figure>
+      <figure class="reveal tall"><div class="ph"><img src="images/gal6.jpg" alt="Devant le stand officiel du Green Hackathon avec un membre du jury" loading="lazy"></div><figcaption>Devant le stand officiel, avec un membre du jury.</figcaption></figure>
+      <figure class="reveal"><div class="ph"><img src="images/projet.jpg" alt="La chaîne des bénévoles progresse dans les rues, la ville de Yaoundé en toile de fond" loading="lazy"></div><figcaption>Chaque sac collecté nourrit les données du sprint du lendemain.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LAURÉATS ===================== -->
+<section class="b-cream" id="laureats">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Le palmarès</p>
+      <h2>Trois projets distingués, trois projets accompagnés.</h2>
+      <p class="lead muted">Neuf équipes en compétition, trois réponses retenues par le jury officiel — chacune engagée dans un programme d'incubation de vingt-quatre mois encadré par une convention signée.</p>
+    </div>
+    <div class="grid g3">
+      <article class="lau reveal">
+        <div class="im"><img src="images/lau1.jpg" alt="L'équipe BIOVALOR, certificat en main, entourée du jury" loading="lazy"></div>
+        <div class="tx">
+          <p class="prix">◆ Premier prix</p>
+          <h3>BIOVALOR Yaoundé</h3>
+          <p class="eq">Le biogaz de quartier</p>
+          <p>Une unité locale et décentralisée qui transforme les déchets organiques des marchés et des ménages en biogaz de cuisson et en engrais biologique pour les maraîchers.</p>
+          <p>Son innovation : un système de purification modulaire, conçu localement et à bas coût, qui rend l'embouteillage du biogaz sûr et rentable à petite échelle — là où les technologies industrielles restent hors de portée.</p>
+        </div>
+      </article>
+      <article class="lau reveal">
+        <div class="im"><img src="images/lau2.jpg" alt="L'équipe GIC Digital lors de la remise des certificats" loading="lazy"></div>
+        <div class="tx">
+          <p class="prix">◆ Deuxième prix</p>
+          <h3>GIC Digital</h3>
+          <p class="eq">La pré-collecte à l'ère numérique</p>
+          <p>Dans les quartiers que les camions ne peuvent pas desservir, les pré-collecteurs et les Groupes d'initiative commune sont le premier maillon de la chaîne — mais ils travaillent sans outils.</p>
+          <p>L'application leur apporte la gestion des tournées, l'abonnement et le paiement des ménages par Mobile Money, et un tableau de bord pour les coordinateurs. Ce qui reposait sur le papier devient mesurable.</p>
+        </div>
+      </article>
+      <article class="lau reveal">
+        <div class="im"><img src="images/lau3.jpg" alt="La Green Dream Team, certificats en main, devant le stand officiel" loading="lazy"></div>
+        <div class="tx">
+          <p class="prix">◆ Troisième prix</p>
+          <h3>Green Dream Team</h3>
+          <p class="eq">Des pavés en plastique recyclé</p>
+          <p>À Yaoundé, le plastique représente une large part des déchets produits et finit le plus souvent brûlé à ciel ouvert.</p>
+          <p>L'équipe en fait des pavés résistants aux chocs et imperméables, destinés aux collectivités, aux entreprises du bâtiment et aux particuliers : assainissement urbain, économie circulaire et auto-emploi des jeunes dans un même modèle.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJET EN COURS ===================== -->
+<section class="b-white" id="projet">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Projet en cours</p>
+      <h2>Ce que nous préparons maintenant.</h2>
+    </div>
+    <div class="grid g2">
+      <div class="project reveal">
+        <div class="project-head">
+          <span class="flag">En préparation</span>
+          <h3>Green Hackathon Yaoundé #2</h3>
+          <p class="when">Samedi 19 décembre 2026 · Yaoundé, Cameroun</p>
+        </div>
+        <div class="project-body">
+          <p>Deuxième édition camerounaise, construite sur les acquis de juillet 2026 : les mêmes partenaires institutionnels, une opération citoyenne élargie, et les lauréats de la première édition invités comme mentors des nouvelles équipes.</p>
+          <p style="font-size:12.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--leaf);margin:22px 0 0">Ce dont l'édition a besoin</p>
+          <div class="chips">
+            <span class="chip">Un lieu pour la journée de sprint</span>
+            <span class="chip">Des mentors</span>
+            <span class="chip">Du matériel de collecte</span>
+            <span class="chip">Des prix pour les lauréats</span>
+          </div>
+          <a class="btn btn-ochre" href="#soutenir">Soutenir cette édition</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <h3 style="font-size:25px;margin-bottom:8px">Les éditions suivantes</h3>
+        <p class="muted" style="font-size:16px;margin-bottom:18px">Une édition par ville, une ville par saison.</p>
+        <ul class="next-list">
+          <li><span class="dot"></span><span><b>Green Hackathon Kinshasa</b><span>3 avril 2027 · République démocratique du Congo</span></span></li>
+          <li><span class="dot"></span><span><b>Brussels Green Hackathon</b><span>6 novembre 2027 · Région de Bruxelles-Capitale</span></span></li>
+        </ul>
+        <p class="muted" style="font-size:16px;margin-top:20px">L'édition bruxelloise fermera le circuit : les lauréats des éditions africaines viendront y présenter leurs projets à des universités, incubateurs et entreprises de la Région.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ANTÉRIORITÉ ===================== -->
+<section class="b-forest" id="anteriorite">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow eyebrow--light">Antériorité</p>
+      <h2>L'ASBL est jeune. L'initiative, non.</h2>
+      <p class="lead muted">L'association a été constituée pour donner un cadre juridique durable à un travail déjà commencé. Voici ce qui existait avant elle : méthode acquise, édition livrée, partenariats obtenus, équipes sous convention.</p>
+    </div>
+
+    <ol class="tl">
+      <li class="reveal"><span class="pin"></span>
+        <span class="d">29 novembre – 1<sup>er</sup> décembre 2024</span>
+        <span class="t">L'Odyssée de l'Objet en 48 h — Service public de Wallonie</span>
+        <span class="s">Faculté d'architecture et d'urbanisme de l'UMons · quarante-huit heures pour concevoir un objet innovant devant un jury exigeant. La matrice méthodologique du Green Hackathon, et l'origine du nom.</span>
+      </li>
+      <li class="reveal"><span class="pin"></span>
+        <span class="d">2024 – 2025</span>
+        <span class="t">Serious Game sur la transition énergétique</span>
+        <span class="s">École polytechnique de Bruxelles (ULB) · un atelier où l'on manipule des ordres de grandeur réels pour tenter de décarboner l'Europe. Dispositif distingué par le Prix de pédagogie Socrate.</span>
+      </li>
+      <li class="reveal"><span class="pin"></span>
+        <span class="d">2026</span>
+        <span class="t">CIVIS — Europe's Civic University Alliance</span>
+        <span class="s">OpenLab Brussels, ULB · l'alliance universitaire civique européenne, et la conviction qu'aucune transition écologique n'est isolée : elle est nécessairement mondiale.</span>
+      </li>
+      <li class="reveal"><span class="pin"></span>
+        <span class="d">Juin 2026</span>
+        <span class="t">Financement bruxellois de la première édition</span>
+        <span class="s">BEP — Bureau étudiant de Polytechnique et Cercle polytechnique de Bruxelles (ULB) · le projet est né, s'est formé et a été financé à Bruxelles avant d'être exécuté à Yaoundé.</span>
+      </li>
+      <li class="reveal"><span class="pin filled"></span>
+        <span class="d">3 – 4 juillet 2026</span>
+        <span class="t">Green Hackathon Yaoundé #1, sous le nom L'Odyssée Express</span>
+        <span class="s">Cité Verte, Yaoundé II · 9 équipes, sprint de 10 h, Grand Oral devant jury officiel.</span>
+      </li>
+      <li class="reveal"><span class="pin filled"></span>
+        <span class="d">Juillet 2026</span>
+        <span class="t">Quatre reconnaissances institutionnelles et trois conventions d'incubation</span>
+        <span class="s">MINRESI, Ambassade de Belgique au Cameroun, Mairie de Yaoundé II, Service public de Wallonie.</span>
+      </li>
+      <li class="mark reveal"><span class="pin filled"></span>
+        <span class="d">2026</span>
+        <span class="t">Constitution de l'ASBL L'Odyssée de l'environnement</span>
+        <span class="s">Bruxelles · l'association reprend l'initiative, en assure la continuité et porte le volet d'intérêt général.</span>
+      </li>
+    </ol>
+
+    <div class="ante-ph">
+      <figure class="reveal"><div class="ph" style="aspect-ratio:1"><img src="images/ante_umons.jpg" alt="Gédéon Tchuisseu à l'UMons lors de L'Odyssée de l'Objet en 48 h" loading="lazy"></div><figcaption>À l'UMons, lors de L'Odyssée de l'Objet en 48 h.</figcaption></figure>
+      <figure class="reveal"><div class="ph" style="aspect-ratio:1"><img src="images/ante_proto.jpg" alt="Présentation du prototype lumineux porté, inspiré des origamis, devant les organisatrices du concours" loading="lazy"></div><figcaption>Le prototype : un luminaire porté inspiré des origamis, présenté au jury.</figcaption></figure>
+      <figure class="reveal"><div class="ph" style="aspect-ratio:1"><img src="images/ante_civis.jpg" alt="Photo de groupe lors de l'événement CIVIS OpenLab Brussels à l'ULB" loading="lazy"></div><figcaption>CIVIS OpenLab Brussels, à l'ULB.</figcaption></figure>
+    </div>
+
+    <p class="note reveal">
+      <strong style="color:#fff;font-weight:600">Précision de méthode.</strong> Les réalisations datées avant 2026 ont été menées par le fondateur à titre personnel, et l'édition de juillet 2026 sous le nom de l'initiative <em>L'Odyssée Express</em> — l'ASBL n'existait pas encore. L'association ne se les attribue pas : elle en assure la suite, avec les mêmes partenaires, la même méthode et les mêmes équipes accompagnées.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== PARTENAIRES ===================== -->
+<section class="b-cream" id="partenaires">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Soutiens institutionnels</p>
+      <h2>Quatre institutions ont accompagné la première édition.</h2>
+    </div>
+    <div class="pgrid">
+      <div class="pcard reveal">
+        <div class="im"><img src="images/part_minresi.jpg" alt="Poignée de main au MINRESI entre le Professeur Eddy L. M. Ngonkeu et Gédéon Tchuisseu" loading="lazy"></div>
+        <div class="tx">
+          <p class="k">Haut patronage scientifique</p>
+          <p class="w">MINRESI</p>
+          <p class="who">Pr Eddy L. M. Ngonkeu</p>
+          <span class="dd">Ministère de la Recherche scientifique et de l'Innovation, Cameroun. Un accompagnement quotidien jusqu'aux dernières heures précédant l'ouverture.</span>
+        </div>
+      </div>
+      <div class="pcard reveal">
+        <div class="im"><img src="images/part_ambassade.jpg" alt="À l'Ambassade de Belgique au Cameroun : M. Brice Gilliard et Gédéon Tchuisseu" loading="lazy"></div>
+        <div class="tx">
+          <p class="k">Parrainage diplomatique</p>
+          <p class="w">Ambassade de Belgique au Cameroun</p>
+          <p class="who">M. Brice Gilliard, attaché</p>
+          <span class="dd">Un suivi du dossier dès les premières semaines, alors que l'équipe était encore à Bruxelles, puis une participation au jury du Grand Oral.</span>
+        </div>
+      </div>
+      <div class="pcard reveal">
+        <div class="im"><img src="images/part_mairie.jpg" alt="Audience officielle à la Mairie de Yaoundé II, à Tsinga" loading="lazy"></div>
+        <div class="tx">
+          <p class="k">Appui officiel</p>
+          <p class="w">Mairie de Yaoundé II</p>
+          <p class="who">Audience du 19 juin 2026, à Tsinga</p>
+          <span class="dd">Autorisations délivrées pour l'Opération Quartier Propre et mobilisation des services techniques de la commune.</span>
+        </div>
+      </div>
+      <div class="pcard reveal">
+        <div class="im" style="display:grid;place-items:center;background:#fff;padding:18px"><img src="images/part_spw.jpg" alt="Logo du concours L'Odyssée de l'Objet en 48 h, Service public de Wallonie" loading="lazy" style="min-height:0;object-fit:contain"></div>
+        <div class="tx">
+          <p class="k">Accompagnement méthodologique</p>
+          <p class="w">Service public de Wallonie</p>
+          <p class="who">Géraldine Tran, L'Odyssée de l'Objet</p>
+          <span class="dd">La transmission des outils méthodologiques et des guides d'innovation industrielle a relevé le niveau d'exigence technique imposé aux équipes de Yaoundé.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mentors reveal">
+      <h3>Le réseau de mentors académiques</h3>
+      <p>Le projet s'est également nourri des conseils de la D<sup>r</sup> Sandra Rothenberger, de Jean-François De Soutter et du P<sup>r</sup> Hubert Tchakouté Tchuigoua, rencontrés autour de CIVIS à l'Université libre de Bruxelles, pour structurer la vision managériale et l'ancrage institutionnel de l'initiative.</p>
+    </div>
+
+    <p class="muted reveal" style="margin-top:22px;font-size:15.5px;max-width:74ch">
+      L'édition inaugurale a bénéficié du soutien financier du BEP — Bureau étudiant de Polytechnique et du Cercle polytechnique de Bruxelles (ULB), et de l'appui des comités logistiques en Belgique et au Cameroun.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== SOUTENIR ===================== -->
+<section class="b-ochre" id="soutenir">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow" style="color:#B36A12">Nous soutenir</p>
+      <h2>Trois façons d'être utile.</h2>
+      <p class="lead muted">Les mandats d'administrateur sont exercés à titre gratuit. Tout soutien va directement aux éditions et aux équipes accompagnées.</p>
+    </div>
+    <div class="sup">
+      <div class="scard reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="4" stroke="#E8871E" stroke-width="1.8"/><path d="M4.5 20c1.2-3.6 4-5.5 7.5-5.5s6.3 1.9 7.5 5.5" stroke="#E8871E" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+        <h3>Devenir membre</h3>
+        <p>Les membres participent à l'assemblée générale, sont invités à toutes les activités et orientent les priorités de l'association.</p>
+        <p style="font-size:14.5px;color:#8A6033">Écrivez-nous pour connaître le montant de la cotisation et les modalités d'adhésion.</p>
+        <a class="btn btn-ochre" href="mailto:contact@odyssee-express.org?subject=Adh%C3%A9sion%20-%20L%27Odyss%C3%A9e%20de%20l%27environnement">Demander à adhérer</a>
+      </div>
+      <div class="scard reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20s-7-4.2-7-9a4.2 4.2 0 017-3.1A4.2 4.2 0 0119 11c0 4.8-7 9-7 9z" stroke="#E8871E" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        <h3>Donner du temps ou du matériel</h3>
+        <ul>
+          <li>Encadrer une équipe comme mentor</li>
+          <li>Siéger dans le jury du Grand Oral</li>
+          <li>Prêter un lieu ou du matériel de collecte</li>
+          <li>Ouvrir votre réseau à une équipe lauréate</li>
+        </ul>
+        <a class="btn btn-dark" href="mailto:contact@odyssee-express.org?subject=B%C3%A9n%C3%A9volat%20-%20L%27Odyss%C3%A9e%20de%20l%27environnement">Proposer votre aide</a>
+      </div>
+      <div class="scard reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V9l5-4 5 4v10" stroke="#E8871E" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 19v-6h6v6" stroke="#E8871E" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+        <h3>Devenir partenaire ou bailleur</h3>
+        <p>Entreprises, communes, universités, incubateurs, fondations et mécènes : dites-nous en une ligne ce que vous voulez soutenir ou organiser. Nous répondons avec un format, un calendrier et un budget.</p>
+        <a class="btn btn-leaf" href="mailto:contact@odyssee-express.org?subject=Partenariat%20-%20L%27Odyss%C3%A9e%20de%20l%27environnement">Écrire à l'association</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GOUVERNANCE + CONTACT ===================== -->
+<section class="b-cream" id="contact">
+  <div class="wrap cgrid">
+    <div class="reveal">
+      <p class="eyebrow">Gouvernance</p>
+      <h2 style="margin-bottom:15px">L'organe d'administration.</h2>
+      <p class="muted">Quatre administrateurs fondateurs. Les mandats sont exercés à titre gratuit. La gestion journalière est déléguée au vice-président.</p>
+      <ul class="board">
+        <li><span class="fn">Président</span><span class="nm">Baudouin Kamda</span></li>
+        <li><span class="fn">Vice-président · gestion journalière</span><span class="nm">Gédéon Sylvestre Tchuisseu</span></li>
+        <li><span class="fn">Secrétaire</span><span class="nm">Bertha Makane Lobe</span></li>
+        <li><span class="fn">Trésorier</span><span class="nm">Dieudonné Francis Noah Mengue</span></li>
+      </ul>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">Nous joindre</p>
+      <ul class="coord">
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5" stroke="#1F9D55" stroke-width="1.7"/><path d="M4 7l8 6 8-6" stroke="#1F9D55" stroke-width="1.7"/></svg></span>
+          <span><span class="k">Courriel</span><a href="mailto:contact@odyssee-express.org">contact@odyssee-express.org</a></span>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3.5h3l2 5-2.2 1.5a11 11 0 005.2 5.2L15.5 13l5 2v3a2 2 0 01-2.2 2C10.4 19.4 4.6 13.6 3.9 5.7A2 2 0 016 3.5z" stroke="#1F9D55" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+          <span><span class="k">Téléphone</span><a href="tel:+32465339448">+32 465 33 94 48</a></span>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z" stroke="#1F9D55" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="#1F9D55" stroke-width="1.7"/></svg></span>
+          <span><span class="k">Siège de l'association</span>Boulevard de la Cambre 32/48<br>1000 Bruxelles, Belgique</span>
+        </li>
+        <li>
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="#1F9D55" stroke-width="1.7"/><path d="M3.5 12h17M12 3.5c2.5 2.4 2.5 14.1 0 17M12 3.5c-2.5 2.4-2.5 14.1 0 17" stroke="#1F9D55" stroke-width="1.5"/></svg></span>
+          <span><span class="k">Sur le terrain</span>Yaoundé, Cameroun · Kinshasa, RDC</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <b>L'Odyssée de l'environnement ASBL</b>
+      Initiative fondée sous le nom L'Odyssée Express<br>
+      Boulevard de la Cambre 32/48, 1000 Bruxelles
+    </div>
+    <div style="text-align:right">
+      Bruxelles ↔ Yaoundé · Kinshasa<br>
+      Numéro d'entreprise en cours d'attribution<br>
+      Photographies : Green Hackathon Yaoundé 2026
+      <nav class="foot-links" aria-label="Liens légaux">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="politique-confidentialite.html">Confidentialité</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('in'); });
+    } else {
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e, i) {
+          if (e.isIntersecting) {
+            setTimeout(function () { e.target.classList.add('in'); }, Math.min(i * 60, 240));
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+      items.forEach(function (el) { obs.observe(el); });
+    }
+
+    var toggle = document.querySelector('.nav-toggle');
+    var panel = document.getElementById('nav-panel');
+    if (toggle && panel) {
+      function closeMenu() {
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Ouvrir le menu');
+        panel.classList.remove('open');
+        panel.hidden = true;
+        document.body.style.overflow = '';
+      }
+      function openMenu() {
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', 'Fermer le menu');
+        panel.hidden = false;
+        panel.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+      toggle.addEventListener('click', function () {
+        if (toggle.getAttribute('aria-expanded') === 'true') closeMenu();
+        else openMenu();
+      });
+      panel.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') closeMenu();
+      });
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 1100) closeMenu();
+      });
+    }
+  })();
+</script>
+</body>
+</html>
