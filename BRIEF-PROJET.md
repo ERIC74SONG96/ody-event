@@ -44,6 +44,8 @@ de déposer `index.html` et `images/` sur n'importe quel hébergeur.
 
 5. **Pas d'activité d'enseignement ou de soutien scolaire**, sous aucune forme.
 
+6. **Positionnement géographique.** L'ASBL ne se présente pas comme un pont « Bruxelles – Yaoundé » ou belgo-camerounais. Son identité publique : éco-innovation au service des **pays en voie de développement**. Le siège belge et les lieux précis des éditions (Yaoundé 2026, partenaires locaux, légendes photo) restent factuels là où l'histoire l'exige.
+
 ## Repères de design
 
 ```
