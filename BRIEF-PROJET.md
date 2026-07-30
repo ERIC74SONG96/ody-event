@@ -77,7 +77,7 @@ ne jamais placer deux bandes identiques côte à côte.
 - [ ] Date exacte de constitution de l'ASBL (actuellement « 2026 » dans la frise)
 - [ ] Montant de la cotisation de membre
 - [ ] Numéro de compte bancaire de l'ASBL, pour rendre le soutien opérant
-- [x] Nom de domaine du site : `odyssee-env.org` (courriel de contact encore sur `odyssee-express.org`)
+- [x] Nom de domaine et courriel de contact : `odyssee-env.org` / `contact@odyssee-env.org`
 - [ ] Accord des personnes reconnaissables sur les photos, pour publication web
 
 ## Pistes d'évolution
