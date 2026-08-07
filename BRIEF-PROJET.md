@@ -80,6 +80,7 @@ ne jamais placer deux bandes identiques côte à côte.
 - [ ] Montant de la cotisation de membre
 - [ ] Numéro de compte bancaire de l'ASBL, pour rendre le soutien opérant
 - [x] Nom de domaine et courriel de contact : `odyssee-env.org` / `contact@odyssee-env.org`
+- [x] Sous-domaine Cameroun : `cameroun.odyssee-env.org` → `/cameroun/` (programme camerounais, lien explicite vers l'ASBL belge)
 - [ ] Accord des personnes reconnaissables sur les photos, pour publication web
 
 ## Pistes d'évolution
