@@ -5,5 +5,12 @@
       "has": [{ "type": "host", "value": "cameroun.odyssee-env.org" }],
       "destination": "/cameroun/:path*"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/cameroun/journee-action.html",
+      "destination": "/cameroun/journee-action/",
+      "permanent": true
+    }
   ]
 }
