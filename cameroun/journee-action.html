@@ -48,6 +48,8 @@
   .check{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;color:var(--muted);margin:20px 0 24px}
   .check input{width:auto;margin-top:4px;flex:none}
   .thanks{background:var(--lime-soft);border:1.5px solid rgba(31,157,85,.25);border-radius:var(--r);padding:22px 24px;margin-bottom:28px;color:var(--forest)}
+  .notice{background:var(--ochre-soft);border:1.5px solid rgba(232,135,30,.28);border-radius:14px;padding:16px 18px;margin:16px 0 0;font-size:15px;color:#7A5420;line-height:1.55}
+  .notice b{color:var(--forest);font-weight:600}
   .thanks b{display:block;font-family:var(--display);font-size:22px;margin-bottom:8px}
   footer{padding:28px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted);text-align:center}
   footer a{color:var(--forest);font-weight:500}
@@ -76,6 +78,7 @@
         <span class="date-badge">Samedi 26 septembre 2026 · Yaoundé</span>
         <h1>Journée de l'action environnementale</h1>
         <p class="muted">Une journée de mobilisation citoyenne : sensibilisation, collecte et relevé des déchets dans les quartiers. Gilets, gants et sacs sur place — venez en tenue confortable.</p>
+        <p class="notice"><b>Lieu de rendez-vous :</b> pas encore fixé. Le point exact sera communiqué aux personnes inscrites dès qu'il sera confirmé.</p>
         <div class="share-row">
           <button type="button" class="btn btn-dark" id="copy-link">Copier le lien d'inscription</button>
           <button type="button" class="btn btn-leaf" id="share-btn" hidden>Partager</button>
@@ -86,7 +89,7 @@
 
     <div class="thanks" id="merci" hidden>
       <b>Inscription enregistrée</b>
-      Merci ! Votre demande a bien été envoyée. L'équipe vous recontactera avec le point de rendez-vous et les consignes pratiques.
+      Merci ! Votre demande a bien été envoyée. Nous vous recontacterons dès que le lieu de rendez-vous sera confirmé, avec les consignes pratiques.
     </div>
 
     <div class="form-box">
@@ -113,7 +116,7 @@
           <input id="tel" name="telephone" type="tel" required autocomplete="tel" placeholder="+237 6XX XX XX XX">
         </div>
         <div class="field">
-          <label for="quartier">Quartier *</label>
+          <label for="quartier">Quartier (où vous habitez ou zone à couvrir) *</label>
           <input id="quartier" name="quartier" type="text" required placeholder="Ex. Cité Verte, Yaoundé II">
         </div>
         <div class="field">
