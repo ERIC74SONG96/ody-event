@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Carte d'ambassadeur · L'Odyssée de l'environnement</title>
+<meta name="description" content="Créez votre carte numérique d'ambassadeur ou d'ambassadrice de L'Odyssée de l'environnement. Photo et informations restent dans votre navigateur.">
+<link rel="canonical" href="https://odyssee-env.org/carte-ambassadeur.html">
+<meta property="og:title" content="Carte d'ambassadeur · L'Odyssée de l'environnement">
+<meta property="og:description" content="Générez votre carte d'ambassadeur : photo et informations restent dans votre navigateur.">
+<meta property="og:url" content="https://odyssee-env.org/carte-ambassadeur.html">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://odyssee-env.org/images/terrain.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F3D2A'/%3E%3Cpath d='M16 26V10' stroke='%23A8D64B' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M16 16c0-4.4 3.6-8 8-8 0 4.4-3.6 8-8 8zM16 21c0-4.4-3.6-8-8-8 0 4.4 3.6 8 8 8z' fill='%23A8D64B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="js/qrcode.min.js"></script>
+<style>
+  :root{--forest:#0F3D2A;--forest-deep:#071A13;--leaf:#1F9D55;--lime:#A8D64B;--lime-soft:#E8F3D6;--ochre:#E8871E;--ochre-soft:#FCEBD5;--cream:#F4F8EF;--white:#fff;--ink:#12251C;--muted:#546A5C;--line:rgba(15,61,42,.12);--shadow:0 20px 50px -24px rgba(7,26,19,.4);--display:"Fraunces",Georgia,serif;--body:"Inter",sans-serif;--r:20px;--maxw:1180px}
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.7}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  h1,h2,legend{font-family:var(--display);font-weight:600;margin:0;letter-spacing:-.02em;line-height:1.12;color:var(--forest)}
+  h1{font-size:clamp(30px,4.6vw,46px);margin-bottom:12px}
+  p{margin:0 0 1em}
+  .muted{color:var(--muted)}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--leaf);margin:0 0 12px}
+  header{padding:22px 0;border-bottom:1px solid var(--line);background:rgba(244,248,239,.94)}
+  .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+  .brand b{font-family:var(--display);font-size:15px;color:var(--forest)}
+  main{padding:48px 0 72px}
+  .intro{max-width:62ch;margin-bottom:36px}
+  .grid{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:40px;align-items:start}
+  @media (max-width:920px){.grid{grid-template-columns:minmax(0,1fr)}.preview{order:-1}}
+  form{background:var(--white);border-radius:var(--r);box-shadow:var(--shadow);padding:26px 26px 28px}
+  fieldset{border:0;margin:0 0 22px;padding:0}
+  legend{font-size:clamp(20px,2.4vw,24px);margin-bottom:12px}
+  label{display:block;font-size:14px;font-weight:600;color:var(--forest);margin:12px 0 7px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .row label{margin-top:12px}
+  input[type=text],input[type=date],select{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--cream);border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;min-height:48px}
+  input:focus,select:focus,button:focus-visible,.file:focus-within{outline:2.5px solid var(--lime);outline-offset:2px;border-color:var(--leaf)}
+  .file{display:flex;align-items:center;gap:12px;border:1.5px dashed var(--line);border-radius:14px;padding:14px;cursor:pointer;background:var(--cream)}
+  .file input{position:absolute;opacity:0;width:1px;height:1px}
+  .file .thumb{width:48px;height:60px;border-radius:8px;background:var(--line) center/cover no-repeat;flex:none}
+  .file span{font-weight:600;color:var(--forest)}
+  .file small{display:block;color:var(--muted);font-weight:400}
+  .adjust{display:none;margin-top:6px}
+  .adjust.on{display:block}
+  input[type=range]{width:100%;accent-color:var(--leaf)}
+  .idline{display:flex;gap:8px}
+  .idline input{flex:1}
+  button{font:inherit;font-weight:600;border-radius:999px;min-height:48px;padding:12px 20px;cursor:pointer}
+  .ghost{background:var(--white);color:var(--forest);border:1.5px solid var(--forest)}
+  .primary{background:var(--ochre);color:#fff;border:0;width:100%;font-size:15px}
+  .primary:hover{background:#d17816}
+  .preview{position:sticky;top:20px}
+  .preview img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:var(--shadow)}
+  .actions{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+  .status{min-height:1.5em;color:var(--muted);font-size:.95rem;margin:0}
+  .status.err{color:#9A5510}
+  .note{color:var(--muted);font-size:.9rem;margin:14px 0 0}
+  footer{padding:28px 0;border-top:1px solid var(--line);font-size:14px;color:var(--muted);text-align:center}
+  footer a{color:var(--forest);font-weight:500;text-decoration:none;border-bottom:1px solid rgba(168,214,75,.55)}
+  a:focus-visible,button:focus-visible{outline:2.5px solid var(--lime);outline-offset:3px}
+  @media (prefers-reduced-motion: reduce){.preview{position:static}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span style="width:36px;height:36px;border-radius:10px;background:var(--forest);display:grid;place-items:center;flex:none"><svg viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><path d="M16 27V11" stroke="#A8D64B" stroke-width="2.4" stroke-linecap="round"/><path d="M16 17c0-4.4 3.6-8 8-8 0 4.4-3.6 8-8 8zM16 22c0-4.4-3.6-8-8-8 0 4.4 3.6 8 8 8z" fill="#A8D64B"/></svg></span>
+      <span><b>L'Odyssée de l'environnement</b></span>
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="intro">
+      <p class="eyebrow">Mobilisation citoyenne</p>
+      <h1>Créez votre carte d'ambassadeur</h1>
+      <p class="muted">Remplissez vos informations, ajoutez votre photo : la carte se génère en direct. Rien n'est envoyé ni enregistré en ligne.</p>
+    </div>
+
+    <div class="grid">
+      <form id="f" autocomplete="off" onsubmit="return false">
+        <fieldset>
+          <legend>Vous</legend>
+          <div class="row">
+            <div><label for="prenom">Prénom</label><input id="prenom" type="text" maxlength="40"></div>
+            <div><label for="nom">Nom</label><input id="nom" type="text" maxlength="40"></div>
+          </div>
+          <label for="photo">Photo</label>
+          <label class="file" for="photo">
+            <input id="photo" type="file" accept="image/png,image/jpeg,image/webp">
+            <div class="thumb" id="thumb"></div>
+            <div><span id="photoLabel">Choisir une photo</span><small>Portrait, visage bien éclairé</small></div>
+          </label>
+          <div class="adjust" id="adjust">
+            <label for="zoom">Zoom</label><input id="zoom" type="range" min="1" max="3" step="0.01" value="1">
+            <div class="row">
+              <div><label for="offx">Gauche / droite</label><input id="offx" type="range" min="-1" max="1" step="0.01" value="0"></div>
+              <div><label for="offy">Haut / bas</label><input id="offy" type="range" min="-1" max="1" step="0.01" value="0"></div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Votre rôle</legend>
+          <div class="row">
+            <div><label for="genre">Titre</label>
+              <select id="genre"><option value="m">Ambassadeur</option><option value="f">Ambassadrice</option></select></div>
+            <div><label for="cat">Catégorie</label>
+              <select id="cat">
+                <option value="eleve">Élève</option>
+                <option value="etudiant">Étudiant(e)</option>
+                <option value="entreprise">Entreprise</option>
+                <option value="commune">Commune</option>
+                <option value="benevole">Bénévole</option>
+                <option value="coord">Coordination locale</option>
+              </select></div>
+          </div>
+          <label for="etab">École, université, entreprise ou commune</label>
+          <input id="etab" type="text" maxlength="80">
+          <div class="row">
+            <div><label for="ville">Ville</label><input id="ville" type="text" maxlength="40" value="Yaoundé"></div>
+            <div><label for="pays">Pays</label>
+              <select id="pays"><option>Cameroun</option><option>Belgique</option><option>Autre</option></select></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>La carte</legend>
+          <label for="numid">Numéro d'ambassadeur</label>
+          <div class="idline"><input id="numid" type="text" maxlength="24"><button type="button" class="ghost" id="regen">Nouveau</button></div>
+          <div class="row">
+            <div><label for="depuis">Membre depuis</label><input id="depuis" type="date"></div>
+            <div><label for="valide">Valable jusqu'au</label><input id="valide" type="date"></div>
+          </div>
+        </fieldset>
+        <button type="button" class="ghost" id="reset" style="width:100%">Nouvelle carte</button>
+      </form>
+
+      <section class="preview" aria-label="Aperçu de la carte">
+        <img id="card" alt="Aperçu de la carte d'ambassadeur">
+        <div class="actions">
+          <button type="button" class="primary" id="dl">Télécharger la carte (PNG)</button>
+          <p class="status" id="status" role="status"></p>
+        </div>
+        <p class="note">La photo et les informations restent dans votre navigateur : rien n'est envoyé ni enregistré en ligne.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html">← Retour au site</a>
+    · <a href="https://odyssee-env.org/cameroun/">Cameroun</a>
+    · <a href="politique-confidentialite.html">Confidentialité</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const W = 1012, H = 638;
+  const C = { paper:'#FBFAF5', forest:'#14463A', deep:'#0E352B', leaf:'#2F8F5B', sun:'#F2C230', ink:'#17231E', label:'#6A7A72' };
+  const FLAGS = {
+    Cameroun: ['#007A5E','#CE1126','#FCD116'],
+    Belgique: ['#1A1A1A','#FDDA24','#EF3340'],
+    Autre:    ['#14463A','#2F8F5B','#F2C230']
+  };
+  const ROLES = {
+    eleve:['Ambassadeur élève','Ambassadrice élève'],
+    etudiant:['Ambassadeur étudiant','Ambassadrice étudiante'],
+    entreprise:['Ambassadeur entreprise','Ambassadrice entreprise'],
+    commune:['Ambassadeur communal','Ambassadrice communale'],
+    benevole:['Ambassadeur bénévole','Ambassadrice bénévole'],
+    coord:['Coordinateur local','Coordinatrice locale']
+  };
+  const DISPLAY = '"Bricolage Grotesque", "Source Sans 3", system-ui, sans-serif';
+  const TEXT = '"Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif';
+
+  const $ = id => document.getElementById(id);
+  const cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+  const ctx = cv.getContext('2d');
+  const out = $('card');
+  let photo = null, pending = false;
+
+  const v = id => $(id).value.trim();
+  const iso = d => d.toISOString().slice(0,10);
+  const fr = s => { if(!s) return '—'; const [y,m,d] = s.split('-'); return `${d}/${m}/${y}`; };
+  function countryCode(){ const p = $('pays').value; return p === 'Cameroun' ? 'CM' : p === 'Belgique' ? 'BE' : 'INT'; }
+  function newId(){
+    const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    const a = new Uint32Array(5); crypto.getRandomValues(a);
+    let r = ''; for (const n of a) r += chars[n % chars.length];
+    return `ODE-${countryCode()}-${String(new Date().getFullYear()).slice(2)}-${r}`;
+  }
+  function defaults(){
+    const now = new Date();
+    $('depuis').value = iso(now);
+    const endYear = now.getMonth() >= 8 ? now.getFullYear() + 1 : now.getFullYear();
+    $('valide').value = `${endYear}-08-31`;
+    $('numid').value = newId();
+  }
+  function rr(x,y,w,h,r){
+    ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r);
+    ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath();
+  }
+  function fitFont(text, weight, family, max, min, maxW){
+    let s = max; ctx.font = `${weight} ${s}px ${family}`;
+    while (s > min && ctx.measureText(text).width > maxW){ s -= 1; ctx.font = `${weight} ${s}px ${family}`; }
+    return s;
+  }
+  function wrap(text, maxW, maxLines){
+    const words = text.split(/\s+/); const lines = []; let line = '';
+    for (const w of words){
+      const t = line ? line + ' ' + w : w;
+      if (ctx.measureText(t).width <= maxW || !line) line = t; else { lines.push(line); line = w; }
+    }
+    if (line) lines.push(line);
+    if (lines.length > maxLines){
+      const kept = lines.slice(0, maxLines); let last = kept[maxLines-1];
+      while (ctx.measureText(last + '…').width > maxW && last.length) last = last.slice(0,-1);
+      kept[maxLines-1] = last + '…'; return kept;
+    }
+    return lines;
+  }
+  function contours(cx, cy, clipX, clipY, clipW, clipH, color, sx, sy){
+    ctx.save(); ctx.beginPath(); ctx.rect(clipX, clipY, clipW, clipH); ctx.clip();
+    ctx.strokeStyle = color; ctx.lineWidth = 1.6;
+    for (let r = 36; r < 760; r += 24){
+      ctx.beginPath();
+      for (let i = 0; i <= 140; i++){
+        const t = i / 140 * Math.PI * 2;
+        const k = r * (1 + 0.10*Math.sin(3*t + r*0.013) + 0.06*Math.sin(5*t - r*0.021) + 0.04*Math.cos(2*t + 0.7));
+        const x = cx + Math.cos(t) * k * sx, y = cy + Math.sin(t) * k * sy;
+        i ? ctx.lineTo(x,y) : ctx.moveTo(x,y);
+      }
+      ctx.closePath(); ctx.stroke();
+    }
+    ctx.restore();
+  }
+  function logo(x, y, r){
+    ctx.fillStyle = C.sun; ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2); ctx.fill();
+    ctx.fillStyle = C.forest; ctx.beginPath();
+    ctx.moveTo(x - r*0.5, y + r*0.5);
+    ctx.quadraticCurveTo(x - r*0.55, y - r*0.55, x + r*0.55, y - r*0.55);
+    ctx.quadraticCurveTo(x + r*0.5, y + r*0.5, x - r*0.5, y + r*0.5);
+    ctx.fill();
+    ctx.strokeStyle = C.sun; ctx.lineWidth = 2.2; ctx.beginPath();
+    ctx.moveTo(x - r*0.42, y + r*0.42); ctx.lineTo(x + r*0.3, y - r*0.3); ctx.stroke();
+  }
+  function label(text, x, y){ ctx.fillStyle = C.label; ctx.font = `600 16px ${TEXT}`; ctx.fillText(text, x, y); }
+
+  function qrCanvas(text){
+    if (typeof QRCode === 'undefined') return null;
+    const box = document.createElement('div');
+    try {
+      new QRCode(box, { text: text.normalize('NFD').replace(/[\u0300-\u036f]/g,''), width: 256, height: 256,
+        colorDark: C.forest, colorLight: C.paper, correctLevel: QRCode.CorrectLevel.M });
+      return box.querySelector('canvas');
+    } catch(e){ return null; }
+  }
+
+  function draw(){
+    pending = false;
+    const g = $('genre').value === 'f' ? 1 : 0;
+    const prenom = v('prenom'), nom = v('nom').toUpperCase();
+    const fullName = (prenom || nom) ? `${prenom} ${nom}`.trim() : 'Votre nom';
+    const role = ROLES[$('cat').value][g];
+    const etab = v('etab') || 'Votre école ou organisation';
+    const pays = $('pays').value;
+    const lieu = [v('ville'), pays === 'Autre' ? '' : pays].filter(Boolean).join(', ') || '—';
+    const id = v('numid') || '—';
+
+    ctx.clearRect(0,0,W,H);
+    ctx.save(); rr(0,0,W,H,34); ctx.clip();
+    ctx.fillStyle = C.paper; ctx.fillRect(0,0,W,H);
+    contours(W + 60, -80, 330, 0, W - 330, H, 'rgba(20,70,58,0.07)', 1.1, 0.9);
+
+    const PW = 330;
+    ctx.fillStyle = C.forest; ctx.fillRect(0,0,PW,H);
+    contours(40, H + 60, 0, 0, PW, H, 'rgba(255,255,255,0.09)', 1.15, 0.85);
+
+    const px = 45, py = 56, pw = 240, ph = 300;
+    ctx.save(); rr(px,py,pw,ph,18); ctx.fillStyle = C.deep; ctx.fill(); ctx.clip();
+    if (photo){
+      const z = +$('zoom').value, ox0 = +$('offx').value, oy0 = +$('offy').value;
+      const s = Math.max(pw / photo.width, ph / photo.height) * z;
+      const dw = photo.width * s, dh = photo.height * s;
+      const ex = (dw - pw) / 2, ey = (dh - ph) / 2;
+      ctx.drawImage(photo, px - ex - ox0*ex, py - ey - oy0*ey, dw, dh);
+    } else {
+      const ini = ((prenom[0] || '') + (v('nom')[0] || '')).toUpperCase() || '?';
+      ctx.fillStyle = 'rgba(255,255,255,0.18)'; ctx.font = `800 96px ${DISPLAY}`;
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(ini, px + pw/2, py + ph/2);
+      ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+    }
+    ctx.restore();
+    ctx.lineWidth = 5; ctx.strokeStyle = C.sun; rr(px,py,pw,ph,18); ctx.stroke();
+
+    const rs = fitFont(role, 700, TEXT, 22, 15, pw - 36);
+    const rw = Math.min(ctx.measureText(role).width + 36, pw);
+    ctx.fillStyle = C.sun; rr((PW - rw)/2, 380, rw, 46, 23); ctx.fill();
+    ctx.fillStyle = C.forest; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.font = `700 ${rs}px ${TEXT}`; ctx.fillText(role, PW/2, 404);
+
+    ctx.fillStyle = 'rgba(255,255,255,0.7)'; ctx.font = `600 16px ${TEXT}`;
+    ctx.fillText('Membre depuis le', PW/2, 462);
+    ctx.fillStyle = '#FFFFFF'; ctx.font = `700 24px ${TEXT}`;
+    ctx.fillText(fr($('depuis').value), PW/2, 490);
+
+    ctx.fillStyle = 'rgba(255,255,255,0.82)'; ctx.font = `600 17px ${TEXT}`;
+    ctx.fillText('Sensibiliser. Agir.', PW/2, 566);
+    ctx.fillText('Mobiliser. Récompenser.', PW/2, 590);
+    ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+
+    const RX = 372, RW = W - RX - 40;
+    logo(RX + 24, 72, 25);
+    ctx.fillStyle = C.forest;
+    fitFont("L'Odyssée de l'environnement", 800, DISPLAY, 31, 22, RW - 62);
+    ctx.fillText("L'Odyssée de l'environnement", RX + 62, 72);
+    ctx.fillStyle = C.leaf; ctx.font = `700 20px ${TEXT}`;
+    ctx.fillText(g ? "Carte d'ambassadrice" : "Carte d'ambassadeur", RX + 62, 100);
+
+    label('Nom et prénom', RX, 162);
+    ctx.fillStyle = C.ink; fitFont(fullName, 800, DISPLAY, 42, 24, RW);
+    ctx.fillText(fullName, RX, 206);
+
+    label('Établissement ou organisation', RX, 256);
+    ctx.fillStyle = C.ink; ctx.font = `600 26px ${TEXT}`;
+    wrap(etab, RW, 2).forEach((l, i) => ctx.fillText(l, RX, 292 + i*32));
+
+    label('Ville et pays', RX, 376);
+    ctx.fillStyle = C.ink; fitFont(lieu, 600, TEXT, 26, 18, RW);
+    ctx.fillText(lieu, RX, 410);
+
+    label("N° d'ambassadeur", RX, 500);
+    ctx.fillStyle = C.forest; fitFont(id, 700, DISPLAY, 25, 16, 236);
+    ctx.fillText(id, RX, 534);
+
+    label("Valable jusqu'au", RX + 256, 500);
+    ctx.fillStyle = C.forest; ctx.font = `700 25px ${DISPLAY}`;
+    ctx.fillText(fr($('valide').value), RX + 256, 534);
+
+    const qr = qrCanvas(
+      `L'Odyssée de l'environnement\n${role} : ${fullName}\nN° ${id}\nValable jusqu'au ${fr($('valide').value)}\nodyssee-env.org`);
+    if (qr){
+      const q = 124, qx = W - 40 - q, qy = H - 40 - q;
+      ctx.fillStyle = C.paper; rr(qx - 8, qy - 8, q + 16, q + 16, 10); ctx.fill();
+      ctx.imageSmoothingEnabled = false; ctx.drawImage(qr, qx, qy, q, q); ctx.imageSmoothingEnabled = true;
+    }
+
+    const f = FLAGS[pays] || FLAGS.Autre, bw = (W - PW) / 3;
+    f.forEach((col, i) => { ctx.fillStyle = col; ctx.fillRect(PW + i*bw, H - 12, bw + 1, 12); });
+
+    ctx.restore();
+    out.src = cv.toDataURL('image/png');
+  }
+  function schedule(){ if (!pending){ pending = true; requestAnimationFrame(draw); } }
+
+  $('photo').addEventListener('change', e => {
+    const file = e.target.files && e.target.files[0]; if (!file) return;
+    const url = URL.createObjectURL(file); const img = new Image();
+    img.onload = () => {
+      photo = img; $('thumb').style.backgroundImage = `url(${url})`;
+      $('photoLabel').textContent = 'Changer la photo';
+      $('adjust').classList.add('on'); setStatus(''); schedule();
+    };
+    img.onerror = () => setStatus("Ce format de photo n'est pas pris en charge. Choisissez une photo JPG ou PNG.", true);
+    img.src = url;
+  });
+
+  $('f').addEventListener('input', schedule);
+  $('pays').addEventListener('change', () => {
+    const cur = v('numid'), m = cur.match(/^ODE-(CM|BE|INT)-(.+)$/);
+    if (m) $('numid').value = `ODE-${countryCode()}-${m[2]}`;
+    schedule();
+  });
+  $('regen').addEventListener('click', () => { $('numid').value = newId(); schedule(); });
+  $('reset').addEventListener('click', () => {
+    $('f').reset(); photo = null; $('thumb').style.backgroundImage = '';
+    $('photoLabel').textContent = 'Choisir une photo'; $('adjust').classList.remove('on');
+    $('ville').value = 'Yaoundé'; defaults(); setStatus(''); schedule();
+  });
+
+  function setStatus(t, err){ const s = $('status'); s.textContent = t; s.classList.toggle('err', !!err); }
+
+  $('dl').addEventListener('click', () => {
+    if (!v('prenom') && !v('nom')) { setStatus('Ajoutez au moins un prénom ou un nom avant de télécharger.', true); $('prenom').focus(); return; }
+    if (!photo) { setStatus('Ajoutez une photo avant de télécharger.', true); return; }
+    draw();
+    const slug = `${v('prenom')}-${v('nom')}`.normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+      .toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') || 'ambassadeur';
+    const filename = `carte-ambassadeur-${slug}.png`;
+    const a = document.createElement('a');
+    a.href = cv.toDataURL('image/png'); a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove();
+    setStatus("Si le téléchargement ne démarre pas : appui long sur la carte (mobile) ou clic droit, puis « Enregistrer l'image ».");
+  });
+
+  defaults();
+  draw();
+  const fontLoads = ['800 40px "Bricolage Grotesque"','700 25px "Bricolage Grotesque"','600 26px "Source Sans 3"','700 22px "Source Sans 3"']
+    .map(f => document.fonts ? document.fonts.load(f) : Promise.resolve());
+  Promise.all(fontLoads).then(schedule, schedule);
+})();
+</script>
+</body>
+</html>

@@ -5,13 +5,17 @@ Fichier de contexte à lire avant toute modification du site.
 ## Structure
 
 ```
-index.html     site complet — HTML, CSS et JS dans un seul fichier
-images/        22 photos JPEG optimisées (issues du magazine officiel 2026)
+index.html                 site complet — HTML, CSS et JS dans un seul fichier
+carte-ambassadeur.html     générateur local de carte d'ambassadeur
+cameroun/                  page Yaoundé + inscription journée d'action
+js/qrcode.min.js           bibliothèque QR, chargée en local
+images/                    22 photos JPEG optimisées (issues du magazine officiel 2026)
 ```
 
 Aucune dépendance, aucun build. Ressource externe unique : Google Fonts
-(Fraunces pour les titres, Inter pour le texte). Site statique : il suffit
-de déposer `index.html` et `images/` sur n'importe quel hébergeur.
+(Fraunces pour les titres, Inter pour le texte ; Bricolage Grotesque et
+Source Sans 3 sur la carte d'ambassadeur). Site statique : il suffit
+de déposer les fichiers HTML, `js/` et `images/` sur n'importe quel hébergeur.
 
 ## Qui est qui — à ne jamais confondre
 
