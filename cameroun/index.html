@@ -10,95 +10,132 @@
 <meta property="og:description" content="Mobilisation citoyenne, Green Hackathon et incubation des équipes lauréates au Cameroun.">
 <meta property="og:url" content="https://odyssee-env.org/cameroun/">
 <meta property="og:image" content="https://odyssee-env.org/images/hero.jpg">
+<meta name="theme-color" content="#0F3D2A">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F3D2A'/%3E%3Cpath d='M16 26V10' stroke='%23A8D64B' stroke-width='2.4' stroke-linecap='round'/%3E%3Cpath d='M16 16c0-4.4 3.6-8 8-8 0 4.4-3.6 8-8 8zM16 21c0-4.4-3.6-8-8-8 0 4.4 3.6 8 8 8z' fill='%23A8D64B'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  :root{--forest:#0F3D2A;--forest-deep:#071A13;--leaf:#1F9D55;--lime:#A8D64B;--lime-soft:#E8F3D6;--ochre:#E8871E;--ochre-soft:#FCEBD5;--cream:#F4F8EF;--white:#fff;--ink:#12251C;--muted:#546A5C;--line:rgba(15,61,42,.12);--shadow:0 20px 50px -24px rgba(7,26,19,.4);--shadow-sm:0 10px 26px -16px rgba(7,26,19,.35);--display:"Fraunces",Georgia,serif;--body:"Inter",sans-serif;--r:20px;--maxw:1180px}
-  *,*::before,*::after{box-sizing:border-box}
-  html{scroll-behavior:smooth;scroll-padding-top:84px}
-  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.7}
-  img{display:block;max-width:100%}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
-  h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;letter-spacing:-.02em;line-height:1.1}
-  h2{font-size:clamp(28px,4vw,44px);color:var(--forest)}
-  p{margin:0 0 1em}
-  .lead{font-size:clamp(17px,1.7vw,19px);line-height:1.65}
-  .muted{color:var(--muted)}
-  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--leaf);margin:0 0 14px;display:flex;align-items:center;gap:9px}
-  .eyebrow::before{content:"";width:22px;height:2px;background:var(--lime);flex:none}
-  .eyebrow--light{color:var(--lime)}
-  header.nav{position:sticky;top:0;z-index:70;background:rgba(244,248,239,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
-  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;flex:none}
-  .brand .badge{width:40px;height:40px;border-radius:12px;background:var(--forest);display:grid;place-items:center}
-  .brand b{font-family:var(--display);font-size:15px;color:var(--forest);white-space:nowrap}
-  .brand small{display:block;font-size:10px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--leaf);margin-top:2px}
-  .nav-links{display:flex;gap:clamp(12px,1.5vw,20px);list-style:none;margin:0;padding:0}
-  .nav-links a{font-size:14px;font-weight:500;color:var(--muted);text-decoration:none;white-space:nowrap}
-  .nav-links a:hover{color:var(--leaf)}
-  .btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;text-decoration:none;padding:12px 20px;border-radius:999px;border:1.5px solid transparent;white-space:nowrap}
-  .btn-leaf{background:var(--leaf);color:#fff}
-  .btn-dark{border-color:var(--forest);color:var(--forest)}
-  .btn-ochre{background:var(--ochre);color:#fff}
-  .hero{position:relative;min-height:min(72vh,620px);display:flex;align-items:flex-end;background:var(--forest-deep);overflow:hidden}
-  .hero-bg{position:absolute;inset:0}
-  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
-  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,26,19,.55),rgba(7,26,19,.92))}
-  .hero-inner{position:relative;z-index:2;padding:100px 0 48px;color:#fff;width:100%}
-  .hero h1{font-size:clamp(32px,5vw,56px);max-width:18ch;margin-bottom:18px}
-  .hero h1 em{font-style:italic;color:var(--lime)}
-  .hero-lead{max-width:52ch;color:rgba(255,255,255,.88);font-size:18px;margin-bottom:24px}
-  section{padding:clamp(52px,6vw,88px) 0}
-  .b-cream{background:var(--cream)} .b-white{background:var(--white)} .b-forest{background:var(--forest);color:#fff}
-  .b-forest h2,.b-forest h3{color:#fff} .b-forest .muted{color:rgba(255,255,255,.74)}
-  .b-ochre{background:var(--ochre-soft)}
-  .sec-head{max-width:62ch;margin-bottom:36px}
-  .sec-head h2{margin-bottom:12px}
-  .grid{display:grid;gap:22px}
-  .g3{grid-template-columns:repeat(3,1fr)} .g2{grid-template-columns:1fr 1fr}
-  @media(max-width:920px){.g3,.g2{grid-template-columns:1fr}.nav-links{display:none}}
-  .mission{display:grid;grid-template-columns:1fr .9fr;gap:40px;align-items:center}
-  @media(max-width:920px){.mission{grid-template-columns:1fr}}
-  .ph{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm);background:#dfe6da}
-  .ph img{width:100%;height:100%;object-fit:cover}
-  figcaption{font-size:13px;color:var(--muted);margin-top:8px}
-  .card,.lau,.pcard{background:var(--white);border-radius:var(--r);box-shadow:var(--shadow-sm);overflow:hidden}
-  .card-art,.lau .im,.pcard .im img{aspect-ratio:4/3;object-fit:cover;width:100%}
-  .card-body,.lau .tx,.pcard .tx{padding:22px 24px 26px}
-  .card-body p,.lau p,.pcard .dd{font-size:15px;color:var(--muted);margin:0}
-  .lau{border-top:4px solid var(--ochre)}
-  .lau .prix{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
-  .lau .eq{font-size:13px;color:var(--leaf);font-weight:600;margin-bottom:10px}
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-  @media(max-width:920px){.steps{grid-template-columns:1fr}}
-  .step{background:rgba(255,255,255,.06);border:1px solid rgba(168,214,75,.24);border-radius:var(--r);overflow:hidden}
-  .step .im{aspect-ratio:3/2;overflow:hidden}
-  .step .im img{width:100%;height:100%;object-fit:cover}
-  .step .tx{padding:20px 22px 24px}
-  .step .dt{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);display:block;margin-bottom:6px}
-  .step p{font-size:15px;color:rgba(255,255,255,.74);margin:0}
-  .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-  @media(max-width:820px){.pgrid{grid-template-columns:1fr}}
-  .pcard{display:grid;grid-template-columns:130px 1fr}
-  @media(max-width:520px){.pcard{grid-template-columns:1fr}}
-  .pcard .k{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--leaf);margin-bottom:4px}
-  .pcard .w{font-family:var(--display);font-weight:600;font-size:17px;color:var(--forest);margin:0}
-  .note{background:rgba(255,255,255,.07);border-left:3px solid var(--ochre);border-radius:0 14px 14px 0;padding:18px 22px;font-size:15px;color:rgba(255,255,255,.78);max-width:78ch}
-  .project{background:var(--white);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
-  .project-head{background:var(--forest);color:#fff;padding:24px 28px}
-  .project-head .flag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:var(--ochre);padding:6px 12px;border-radius:999px;margin-bottom:12px}
-  .project-body{padding:24px 28px 28px}
-  .project-body p{font-size:15.5px;color:var(--muted)}
-  footer{background:var(--forest-deep);color:rgba(255,255,255,.65);padding:36px 0 30px;font-size:14px}
-  .foot{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end}
-  footer b{font-family:var(--display);color:#fff;font-size:17px;display:block;margin-bottom:6px}
-  .legal-foot{font-size:12px;color:rgba(255,255,255,.48);margin-top:8px;line-height:1.55;max-width:42ch}
-  .legal-foot a{color:rgba(255,255,255,.62);text-decoration:none;border-bottom:1px solid rgba(168,214,75,.25)}
-  .foot-links{display:flex;flex-wrap:wrap;gap:14px 20px;margin-top:10px}
-  .foot-links a{color:rgba(255,255,255,.72);text-decoration:none;border-bottom:1px solid rgba(168,214,75,.35)}
-  a:focus-visible{outline:2.5px solid var(--lime);outline-offset:3px}
+:root{--forest:#0F3D2A;--deep:#08241A;--leaf:#1F9D55;--lime:#B5DC4F;--ochre:#E8871E;--ochre-dk:#C76D0C;--mist:#EDF2EA;--ink:#10241A;--muted:#4E6357;--line:rgba(15,61,42,.14);--display:"Bricolage Grotesque","Arial Narrow",Arial,sans-serif;--body:"Source Sans 3","Helvetica Neue",Arial,sans-serif;--maxw:1240px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:#fff;color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+svg{display:block}
+p{margin:0 0 1em}
+figure{margin:0}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+h1,h2,h3{font-family:var(--display);margin:0;font-weight:700;letter-spacing:-.025em;line-height:1.02}
+h2{font-size:clamp(34px,4.6vw,60px);color:var(--forest);max-width:18ch}
+h3{font-size:clamp(21px,1.9vw,25px);line-height:1.15;letter-spacing:-.015em;color:var(--forest)}
+.lead{font-size:clamp(18px,1.5vw,21px);line-height:1.55;color:var(--muted);max-width:58ch}
+.kicker{font-family:var(--display);font-weight:500;font-size:17px;color:var(--leaf);margin:0 0 18px}
+section{padding:clamp(72px,9vw,128px) 0}
+.on-dark{background:var(--forest);color:#fff}
+.on-dark h2,.on-dark h3{color:#fff}
+.on-dark .lead{color:rgba(255,255,255,.78)}
+.on-dark .kicker{color:var(--lime)}
+.mist{background:var(--mist)}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:32px 64px;align-items:end;margin-bottom:clamp(40px,5vw,64px)}
+.head .lead{margin:0}
+.ph{position:relative;overflow:hidden;background:#cfd8cb;border-radius:6px}
+.ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(1.06)}
+.tag{position:absolute;right:14px;top:14px;background:rgba(8,36,26,.86);color:#fff;font-size:13.5px;line-height:1.3;padding:7px 11px;border-radius:4px}
+.tag b{color:var(--lime);font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-size:16.5px;font-weight:700;text-decoration:none;padding:15px 26px;border-radius:999px;border:2px solid transparent;transition:background .2s,color .2s;white-space:nowrap;line-height:1.1}
+.btn-ochre{background:var(--ochre);color:#fff}
+.btn-ochre:hover{background:var(--ochre-dk)}
+.btn-line{border-color:var(--forest);color:var(--forest)}
+.btn-line:hover{background:var(--forest);color:#fff}
+.on-dark .btn-line,.feature .btn-line{border-color:rgba(255,255,255,.5);color:#fff}
+.on-dark .btn-line:hover,.feature .btn-line:hover{background:#fff;color:var(--forest)}
+.btn-sm{padding:11px 20px;font-size:15px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.nav{position:sticky;top:0;z-index:70;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand .badge{width:40px;height:40px;border-radius:10px;background:var(--forest);display:grid;place-items:center;flex:none}
+.brand b{font-family:var(--display);font-weight:700;font-size:clamp(15px,4.2vw,18px);letter-spacing:-.02em;color:var(--forest);line-height:1.1;display:block}
+.brand small{display:block;font-size:13px;color:var(--muted)}
+.nav-links{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+.nav-links a{font-size:15.5px;font-weight:600;color:var(--ink);text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.nav-links a:hover{border-bottom-color:var(--lime)}
+@media(max-width:1000px){.nav-links{display:none}}
+@media(max-width:480px){.nav .btn{display:none}}
+.hero{padding:clamp(40px,6vw,80px) 0 0}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(44px,7vw,96px);color:var(--forest);letter-spacing:-.04em;line-height:.94;font-weight:800;margin-bottom:28px}
+.hero h1 span{display:block;color:var(--leaf)}
+.hero .lead{margin-bottom:34px}
+.hero .ph{aspect-ratio:4/5}
+.proof{background:var(--forest);color:#fff;padding:clamp(36px,4vw,52px) 0;margin-top:clamp(48px,6vw,80px)}
+.proof ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.proof li{border-left:2px solid rgba(181,220,79,.5);padding-left:20px}
+.proof strong{display:block;font-family:var(--display);font-weight:800;font-size:clamp(40px,4.4vw,60px);line-height:1;letter-spacing:-.04em;color:var(--lime)}
+.proof span{display:block;font-size:16px;color:rgba(255,255,255,.82);margin-top:8px;line-height:1.35;max-width:22ch}
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,40px);counter-reset:f}
+.flow li{counter-increment:f}
+.flow .ph{aspect-ratio:4/3;margin-bottom:22px}
+.flow .n{display:flex;align-items:center;gap:14px;margin-bottom:14px;font-family:var(--display);font-weight:800;font-size:15px;color:var(--leaf)}
+.flow .n::before{content:counter(f);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--forest);color:var(--lime);font-size:17px}
+.flow .n::after{content:"";flex:1;height:2px;background:var(--line)}
+.flow li:last-child .n::after{display:none}
+.flow h3{margin-bottom:10px}
+.flow p{color:var(--muted);font-size:17px;margin:0}
+.days{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,36px);border-top:1px solid rgba(255,255,255,.2)}
+.days li{padding-top:26px;position:relative}
+.days li::before{content:"";position:absolute;top:-6px;left:0;width:11px;height:11px;border-radius:50%;background:var(--lime)}
+.days time{display:block;font-family:var(--display);font-weight:700;font-size:clamp(24px,2.4vw,32px);letter-spacing:-.025em;color:var(--lime);line-height:1}
+.days .where{display:block;font-size:15.5px;color:rgba(255,255,255,.66);margin:8px 0 20px}
+.days .ph{aspect-ratio:3/2;margin-bottom:20px}
+.days h3{margin-bottom:8px}
+.days p{font-size:17px;color:rgba(255,255,255,.78);margin:0}
+.note{margin-top:40px;font-size:16px;color:rgba(255,255,255,.74);border-top:1px solid rgba(255,255,255,.2);padding-top:20px;max-width:80ch}
+.note strong{color:#fff}
+.podium{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,40px)}
+.lau .ph{aspect-ratio:4/5;margin-bottom:24px;background:var(--forest)}
+.lau .ph img{filter:grayscale(1) contrast(1.18) brightness(1.06);object-position:50% 62%}
+.lau .rank{position:absolute;top:14px;left:14px;z-index:2;background:var(--ochre);color:#fff;font-family:var(--display);font-weight:700;font-size:15px;padding:6px 12px;border-radius:4px}
+.lau h3{font-size:clamp(25px,2.3vw,30px);margin-bottom:4px}
+.lau .what{font-family:var(--display);font-weight:500;font-size:19px;color:var(--leaf);margin-bottom:14px}
+.lau p{color:var(--muted);font-size:17px}
+.next{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,4vw,56px);align-items:start}
+.feature{background:var(--forest);color:#fff;border-radius:10px;padding:clamp(28px,3.4vw,44px)}
+.status{display:inline-block;background:var(--ochre);color:#fff;font-weight:700;font-size:14.5px;padding:6px 12px;border-radius:4px;margin-bottom:22px}
+.feature h3{color:#fff;font-size:clamp(32px,3.6vw,48px);letter-spacing:-.035em;margin-bottom:10px;line-height:1}
+.feature .when{font-family:var(--display);font-weight:500;font-size:20px;color:var(--lime);margin-bottom:22px}
+.feature p{color:rgba(255,255,255,.8);max-width:52ch}
+.feature .cta{margin-top:28px}
+.needs{list-style:none;margin:0;padding:0}
+.needs li{padding:20px 0;border-bottom:1px solid var(--line)}
+.needs li:first-child{border-top:1px solid var(--line)}
+.needs b{display:block;font-family:var(--display);font-size:22px;color:var(--forest);letter-spacing:-.02em;line-height:1.15}
+.needs span{display:block;color:var(--muted);font-size:16.5px;margin-top:4px}
+.amb{display:grid;grid-template-columns:1fr auto;gap:24px 48px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:clamp(26px,3vw,40px);margin-top:clamp(32px,4vw,48px);background:#fff}
+.amb h3{margin-bottom:8px}
+.amb p{color:var(--muted);margin:0;max-width:60ch}
+.inst{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,2.4vw,32px)}
+.inst .ph{aspect-ratio:1;margin-bottom:18px}
+.inst .ph.logo{background:#fff;border:1px solid var(--line);display:grid;place-items:center;padding:18px}
+.inst .ph.logo img{object-fit:contain;height:auto;filter:none}
+.inst .role{font-size:15px;font-weight:700;color:var(--leaf);margin-bottom:4px}
+.inst h3{font-size:21px;margin-bottom:6px}
+.inst p{font-size:16px;color:var(--muted);margin:0}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,88px);align-items:end}
+.coord{list-style:none;margin:0;padding:0}
+.coord li{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.2)}
+.coord .k{display:block;font-size:15px;color:rgba(255,255,255,.66)}
+.coord a{font-family:var(--display);font-weight:700;font-size:clamp(22px,2.2vw,28px);letter-spacing:-.02em;color:#fff;text-decoration:none}
+.coord a:hover{color:var(--lime)}
+footer{background:var(--deep);color:rgba(255,255,255,.66);padding:44px 0 38px;font-size:15.5px}
+.foot{display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between}
+footer b{font-family:var(--display);font-weight:700;color:#fff;font-size:20px;display:block;margin-bottom:6px}
+footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(181,220,79,.5)}
+.foot-links{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-start;align-self:flex-start}
+a:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;border-radius:4px}
+@media(max-width:900px){.head,.hero-grid,.next,.contact{grid-template-columns:1fr}.flow,.days,.podium{grid-template-columns:1fr;gap:44px}.flow .n::after{display:none}.inst{grid-template-columns:1fr 1fr}.proof ul{grid-template-columns:1fr 1fr;row-gap:32px}.hero .ph{aspect-ratio:4/3}.amb{grid-template-columns:1fr}.podium{max-width:560px}.lau .ph{aspect-ratio:4/3}}
+@media(prefers-reduced-motion:no-preference){.hero h1,.hero .lead,.hero .cta{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}.hero .lead{animation-delay:.12s}.hero .cta{animation-delay:.22s}.hero .ph{animation:wipe 1.1s cubic-bezier(.7,0,.2,1) .1s both}@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}@keyframes wipe{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0)}}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -106,195 +143,152 @@
 <header class="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="#top">
-      <span class="badge"><svg viewBox="0 0 32 32" width="24" height="24" aria-hidden="true"><path d="M16 27V11" stroke="#A8D64B" stroke-width="2.4" stroke-linecap="round"/><path d="M16 17c0-4.4 3.6-8 8-8 0 4.4-3.6 8-8 8zM16 22c0-4.4-3.6-8-8-8 0 4.4 3.6 8 8 8z" fill="#A8D64B"/></svg></span>
-      <span><b>L'Odyssée de l'environnement</b><small>Yaoundé · Cameroun</small></span>
+      <span class="badge"><svg viewBox="0 0 32 32" width="24" height="24" aria-hidden="true"><path d="M16 27V11" stroke="#B5DC4F" stroke-width="2.4" stroke-linecap="round"/><path d="M16 17c0-4.4 3.6-8 8-8 0 4.4-3.6 8-8 8zM16 22c0-4.4-3.6-8-8-8 0 4.4 3.6 8 8 8z" fill="#B5DC4F"/></svg></span>
+      <span><b>L'Odyssée de l'environnement</b><small>Yaoundé, Cameroun</small></span>
     </a>
     <nav aria-label="Navigation">
       <ul class="nav-links">
-        <li><a href="#programme">Programme</a></li>
+        <li><a href="#programme">Méthode</a></li>
         <li><a href="#edition">Édition 2026</a></li>
         <li><a href="#laureats">Lauréats</a></li>
-        <li><a href="#prochaine">26 septembre</a></li>
-        <li><a href="#hackathon">Hackathon</a></li>
+        <li><a href="#hackathon">Hackathon 2027</a></li>
         <li><a href="#partenaires">Partenaires</a></li>
       </ul>
     </nav>
-    <a class="btn btn-leaf btn-sm" href="#contact">Nous joindre</a>
+    <a class="btn btn-ochre btn-sm" href="#contact">Nous joindre</a>
   </div>
 </header>
 
 <main id="top">
 
-<div class="hero">
-  <div class="hero-bg"><img src="/images/terrain.jpg" alt="Éco-bénévoles au point de départ de l'Opération Quartier Propre, Cité Verte, Yaoundé II"></div>
-  <div class="hero-inner">
-    <div class="wrap">
-      <p class="eyebrow eyebrow--light">Yaoundé · mobilisation &amp; éco-innovation</p>
-      <h1>Sur le terrain, <em>là où</em> le problème se pose.</h1>
-      <p class="hero-lead">Nous mobilisons les quartiers, organisons des Green Hackathon et accompagnons les équipes lauréates — avec les habitants, les étudiants et les ingénieurs qui connaissent le terrain.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:12px">
-        <a class="btn btn-ochre" href="/cameroun/journee-action/">Journée du 26 septembre</a>
-        <a class="btn btn-dark" href="#contact" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35);color:#fff">Nous joindre</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<section class="b-cream" id="programme">
-  <div class="wrap mission">
+<section class="hero">
+  <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow">Notre méthode</p>
+      <h1>Sur le terrain, <span>là où le problème se pose.</span></h1>
+      <p class="lead">Nous mobilisons les quartiers, organisons des Green Hackathon et accompagnons les équipes lauréates, avec les habitants, les étudiants et les ingénieurs qui connaissent le terrain.</p>
+      <div class="cta">
+        <a class="btn btn-ochre" href="#hackathon">Green Hackathon Yaoundé #2</a>
+        <a class="btn btn-line" href="#edition">Voir l'édition 2026</a>
+      </div>
+    </div>
+    <figure class="ph"><img src="/images/terrain.jpg" alt="Éco-bénévoles au point de départ de l'Opération Quartier Propre, Cité Verte, Yaoundé II"><figcaption class="tag"><b>3 juillet 2026</b> · Cité Verte, Yaoundé II</figcaption></figure>
+  </div>
+  <div class="proof">
+    <div class="wrap">
+      <ul>
+        <li><strong>9</strong><span>équipes pluridisciplinaires en compétition</span></li>
+        <li><strong>10 h</strong><span>de sprint, jusqu'au Grand Oral devant jury</span></li>
+        <li><strong>4</strong><span>partenaires institutionnels engagés</span></li>
+        <li><strong>3</strong><span>équipes lauréates sous convention de 24 mois</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="mist" id="programme">
+  <div class="wrap">
+    <div class="head">
       <h2>Trois étapes, un enchaînement.</h2>
-      <p class="lead muted">Partir d'un problème réel dans le quartier, imposer un temps court, exiger un jury. Mobiliser, concevoir, accompagner — c'est la chaîne qui a structuré la première édition à Yaoundé.</p>
-      <p class="muted">Chaque étape alimente la suivante : les données collectées rue par rue deviennent la base technique du sprint ; les projets retenus entrent en incubation pendant vingt-quatre mois.</p>
+      <p class="lead">Partir d'un problème réel dans le quartier, imposer un temps court, exiger un jury. Les données collectées rue par rue deviennent la base technique du sprint ; les projets retenus entrent en incubation pendant vingt-quatre mois.</p>
     </div>
-    <figure>
-      <div class="ph" style="aspect-ratio:16/9"><img src="/images/dom1.jpg" alt="Éco-bénévoles en gilets réfléchissants, Cité Verte, Yaoundé" loading="lazy"></div>
-      <figcaption>Mobilisation citoyenne — Opération Quartier Propre, juillet 2026.</figcaption>
-    </figure>
-  </div>
-  <div class="wrap grid g3" style="margin-top:36px">
-    <article class="card">
-      <img class="card-art" src="/images/dom1.jpg" alt="" loading="lazy">
-      <div class="card-body"><h3>Mobilisation citoyenne</h3><p>Sensibilisation, collecte et relevé des déchets rue par rue — base technique du sprint du lendemain.</p></div>
-    </article>
-    <article class="card">
-      <img class="card-art" src="/images/dom2.jpg" alt="" loading="lazy">
-      <div class="card-body"><h3>Green Hackathon</h3><p>Dix heures de sprint, neuf équipes pluridisciplinaires, Grand Oral devant jury officiel.</p></div>
-    </article>
-    <article class="card">
-      <img class="card-art" src="/images/dom3.jpg" alt="" loading="lazy">
-      <div class="card-body"><h3>Incubation</h3><p>Vingt-quatre mois d'accompagnement sous convention : structuration, pitch, réseau, financements.</p></div>
-    </article>
+    <ol class="flow">
+      <li><div class="ph"><img src="/images/dom1.jpg" alt="Éco-bénévoles en gilets réfléchissants, Cité Verte, Yaoundé" loading="lazy"></div><p class="n">Le quartier</p><h3>Mobilisation citoyenne</h3><p>Sensibilisation, collecte et relevé des déchets rue par rue : la base technique du sprint du lendemain.</p></li>
+      <li><div class="ph"><img src="/images/gal5.jpg" alt="Deux participantes au travail pendant le sprint" loading="lazy"></div><p class="n">Le sprint</p><h3>Green Hackathon</h3><p>Dix heures de sprint, des équipes pluridisciplinaires, un Grand Oral devant jury officiel.</p></li>
+      <li><div class="ph"><img src="/images/dom3.jpg" alt="Équipe lauréate et jury du Green Hackathon" loading="lazy"></div><p class="n">Les deux ans qui suivent</p><h3>Incubation</h3><p>Vingt-quatre mois d'accompagnement sous convention : structuration, pitch, réseau, financements.</p></li>
+    </ol>
   </div>
 </section>
 
-<section class="b-forest" id="edition">
+<section class="on-dark" id="edition">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow eyebrow--light">Juillet 2026 · Cité Verte, Yaoundé II</p>
-      <h2>Première édition camerounaise.</h2>
-      <p class="lead muted">L'édition inaugurale a été menée sous le nom L'Odyssée Express, avant la constitution de l'ASBL. Trois temps : autorisation municipale, opération citoyenne, sprint d'innovation.</p>
+    <div class="head">
+      <div>
+        <p class="kicker">Juillet 2026, Yaoundé</p>
+        <h2>Première édition camerounaise.</h2>
+      </div>
+      <p class="lead">Trois temps : autorisation municipale, opération citoyenne, sprint d'innovation.</p>
     </div>
-    <div class="steps">
-      <article class="step">
-        <div class="im"><img src="/images/part_mairie.jpg" alt="Audience à la Mairie de Yaoundé II" loading="lazy"></div>
-        <div class="tx"><span class="dt">19 juin 2026</span><h3>Autorisation municipale</h3><p>Audience officielle à la Mairie de Yaoundé II, à Tsinga.</p></div>
-      </article>
-      <article class="step">
-        <div class="im"><img src="/images/gal2.jpg" alt="Collecte à la Cité Verte" loading="lazy"></div>
-        <div class="tx"><span class="dt">3 juillet 2026</span><h3>Opération Quartier Propre</h3><p>Point de départ près de Yoyo-Bar — éco-bénévoles en action dans la Cité Verte.</p></div>
-      </article>
-      <article class="step">
-        <div class="im"><img src="/images/gal5.jpg" alt="Sprint au LTIC de Yaoundé" loading="lazy"></div>
-        <div class="tx"><span class="dt">4 juillet 2026</span><h3>Dix heures de sprint</h3><p>Au LTIC de Yaoundé, neuf équipes en compétition devant jury officiel.</p></div>
-      </article>
-    </div>
-    <p class="note" style="margin-top:28px"><strong style="color:#fff">Précision de méthode.</strong> L'édition de juillet 2026 a été menée sous le nom L'Odyssée Express, avant la constitution de l'ASBL. L'association en assure la suite, avec les mêmes partenaires et les mêmes équipes accompagnées.</p>
+    <ol class="days">
+      <li><time datetime="2026-06-19">19 juin 2026</time><span class="where">Mairie de Yaoundé II, Tsinga</span><div class="ph"><img src="/images/part_mairie.jpg" alt="Audience à la Mairie de Yaoundé II" loading="lazy"></div><h3>Autorisation municipale</h3><p>Audience officielle : le Maire délivre les autorisations et mobilise les services techniques de la commune.</p></li>
+      <li><time datetime="2026-07-03">3 juillet 2026</time><span class="where">Cité Verte, Yaoundé II</span><div class="ph"><img src="/images/gal2.jpg" alt="Collecte à la Cité Verte" loading="lazy"></div><h3>Opération Quartier Propre</h3><p>Départ près de Yoyo-Bar : éco-bénévoles, sacs de tri distribués aux ménages, sensibilisation porte à porte et collecte.</p></li>
+      <li><time datetime="2026-07-04">4 juillet 2026</time><span class="where">Lycée technique industriel et commercial de Yaoundé</span><div class="ph"><img src="/images/gal4.jpg" alt="Une équipe en conception pendant le sprint" loading="lazy"></div><h3>Dix heures de sprint</h3><p>Neuf équipes de l'Université de Yaoundé I et des grandes écoles, jusqu'au Grand Oral devant jury officiel.</p></li>
+    </ol>
+    <p class="note"><strong>Précision de méthode.</strong> L'édition de juillet 2026 a été menée sous le nom L'Odyssée Express, avant la constitution de l'ASBL. L'association en assure la suite, avec les mêmes partenaires et les mêmes équipes accompagnées.</p>
   </div>
 </section>
 
-<section class="b-cream" id="laureats">
+<section id="laureats">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Palmarès 2026</p>
+    <div class="head">
       <h2>Trois lauréats, trois projets accompagnés.</h2>
+      <p class="lead">Chaque équipe lauréate est engagée dans un programme d'incubation de vingt-quatre mois encadré par une convention signée.</p>
     </div>
-    <div class="grid g3">
-      <article class="lau">
-        <img class="im" src="/images/lau1.jpg" alt="Équipe BIOVALOR" loading="lazy">
-        <div class="tx"><p class="prix">Premier prix</p><h3>BIOVALOR Yaoundé</h3><p class="eq">Le biogaz de quartier</p><p>Unité locale transformant les déchets organiques en biogaz de cuisson et engrais biologique.</p></div>
-      </article>
-      <article class="lau">
-        <img class="im" src="/images/lau2.jpg" alt="Équipe GIC Digital" loading="lazy">
-        <div class="tx"><p class="prix">Deuxième prix</p><h3>GIC Digital</h3><p class="eq">La pré-collecte numérique</p><p>Gestion des tournées, abonnements et paiements Mobile Money pour les pré-collecteurs.</p></div>
-      </article>
-      <article class="lau">
-        <img class="im" src="/images/lau3.jpg" alt="Green Dream Team" loading="lazy">
-        <div class="tx"><p class="prix">Troisième prix</p><h3>Green Dream Team</h3><p class="eq">Pavés en plastique recyclé</p><p>Valorisation du plastique en pavés résistants pour l'assainissement urbain.</p></div>
-      </article>
+    <div class="podium">
+      <article class="lau"><div class="ph"><span class="rank">Premier prix</span><img src="/images/lau1.jpg" alt="Équipe BIOVALOR" loading="lazy"></div><h3>BIOVALOR Yaoundé</h3><p class="what">Le biogaz de quartier</p><p>Une unité locale qui transforme les déchets organiques des marchés et des ménages en biogaz de cuisson et en engrais biologique.</p></article>
+      <article class="lau"><div class="ph"><span class="rank">Deuxième prix</span><img src="/images/lau2.jpg" alt="Équipe GIC Digital" loading="lazy"></div><h3>GIC Digital</h3><p class="what">La pré-collecte numérique</p><p>Gestion des tournées, abonnements et paiements Mobile Money pour les pré-collecteurs et les Groupes d'initiative commune.</p></article>
+      <article class="lau"><div class="ph"><span class="rank">Troisième prix</span><img src="/images/lau3.jpg" alt="Green Dream Team" loading="lazy"></div><h3>Green Dream Team</h3><p class="what">Des pavés en plastique recyclé</p><p>Le plastique, souvent brûlé à ciel ouvert, devient des pavés résistants pour l'assainissement urbain.</p></article>
     </div>
   </div>
 </section>
 
-<section class="b-ochre" id="prochaine" style="padding-top:0;margin-top:-20px">
+<section class="mist" id="hackathon">
   <div class="wrap">
-    <div class="project" style="max-width:820px;box-shadow:var(--shadow)">
-      <div class="project-head">
-        <span class="flag">Inscriptions ouvertes</span>
-        <h3 style="color:#fff">Journée de l'action environnementale</h3>
-        <p style="color:var(--lime);font-weight:600;margin:0">Samedi 26 septembre 2026 · Yaoundé · lieu à confirmer</p>
+    <div class="next">
+      <div class="feature">
+        <span class="status">Recrutement des équipes</span>
+        <h3>Green Hackathon Yaoundé #2</h3>
+        <p class="when">Juin 2027, Yaoundé. Date exacte à confirmer.</p>
+        <p>Deuxième édition, à la même période que la première. Les équipes sont recrutées dans les universités et grandes écoles ; elles recevront un problème environnemental réel de la ville environ trois mois avant la finale, et présenteront rapport et prototype devant le jury.</p>
+        <div class="cta">
+          <a class="btn btn-ochre" href="mailto:contact@odyssee-env.org?subject=Green%20Hackathon%20Yaound%C3%A9%20%232">Inscrire une équipe</a>
+          <a class="btn btn-line" href="mailto:contact@odyssee-env.org?subject=Partenariat%20Green%20Hackathon%20Yaound%C3%A9%20%232">Devenir partenaire</a>
+        </div>
       </div>
-      <div class="project-body" style="background:var(--white)">
-        <p>Mobilisation citoyenne dans les quartiers : sensibilisation, collecte et relevé des déchets. Le point de rendez-vous sera annoncé aux inscrits.</p>
-        <a class="btn btn-ochre" href="/cameroun/journee-action/">S'inscrire · partager le lien</a>
+      <div>
+        <h2 style="font-size:clamp(28px,3vw,40px);margin-bottom:24px">Ce dont l'édition a besoin.</h2>
+        <ul class="needs">
+          <li><b>Un lieu pour le sprint</b><span>Une salle équipée pour accueillir les équipes et le Grand Oral.</span></li>
+          <li><b>Des mentors et des membres du jury</b><span>Ingénieurs, entrepreneurs et experts du secteur des déchets.</span></li>
+          <li><b>Du matériel de collecte</b><span>Gilets, gants et sacs de tri pour la mobilisation dans les quartiers.</span></li>
+          <li><b>Des prix pour les lauréats</b><span>Les entreprises partenaires peuvent aussi proposer stages et partenariats aux finalistes.</span></li>
+        </ul>
       </div>
     </div>
-    <div class="project" style="max-width:820px;margin-top:22px;box-shadow:var(--shadow-sm)">
-      <div class="project-head">
-        <span class="flag">Ambassadeurs</span>
-        <h3 style="color:#fff">Votre carte numérique</h3>
+    <div class="amb">
+      <div>
+        <h3>Devenez ambassadeur</h3>
+        <p>Élèves, étudiants, bénévoles, entreprises et communes : générez votre carte d'ambassadeur. La photo et les informations restent dans votre navigateur.</p>
       </div>
-      <div class="project-body" style="background:var(--white)">
-        <p>Élèves, étudiants, bénévoles, entreprises et communes : générez votre carte d'ambassadeur. Photo et informations restent dans votre navigateur.</p>
-        <a class="btn btn-ochre" href="/carte-ambassadeur.html">Créer votre carte</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="b-white" id="hackathon">
-  <div class="wrap">
-    <div class="project" style="max-width:760px">
-      <div class="project-head">
-        <span class="flag">En préparation</span>
-        <h3 style="color:#fff">Green Hackathon Yaoundé #2</h3>
-        <p style="color:var(--lime);font-weight:600;margin:0">Samedi 19 décembre 2026 · Yaoundé</p>
-      </div>
-      <div class="project-body">
-        <p>Deuxième édition sur le terrain : opération citoyenne élargie, lauréats de 2026 invités comme mentors, mêmes partenaires institutionnels.</p>
-        <p style="font-size:12.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--leaf);margin:22px 0 0">Ce dont l'édition a besoin</p>
-        <p class="muted" style="margin-top:10px">Un lieu pour le sprint, des mentors, du matériel de collecte, des prix pour les lauréats.</p>
-        <a class="btn btn-ochre" href="mailto:contact@odyssee-env.org?subject=Green%20Hackathon%20Yaound%C3%A9%20%232" style="margin-top:18px">Proposer votre aide</a>
-      </div>
+      <a class="btn btn-line" href="/carte-ambassadeur.html">Créer votre carte</a>
     </div>
   </div>
 </section>
 
-<section class="b-cream" id="partenaires">
+<section id="partenaires">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Partenaires locaux · édition 2026</p>
+    <div class="head">
       <h2>Quatre institutions engagées.</h2>
+      <p class="lead">Les partenaires de la première édition, en 2026.</p>
     </div>
-    <div class="pgrid">
-      <div class="pcard">
-        <div class="im"><img src="/images/part_minresi.jpg" alt="MINRESI" loading="lazy"></div>
-        <div class="tx"><p class="k">Haut patronage scientifique</p><p class="w">MINRESI</p><p class="dd">Ministère de la Recherche scientifique et de l'Innovation.</p></div>
-      </div>
-      <div class="pcard">
-        <div class="im"><img src="/images/part_ambassade.jpg" alt="Ambassade de Belgique" loading="lazy"></div>
-        <div class="tx"><p class="k">Parrainage diplomatique</p><p class="w">Ambassade de Belgique au Cameroun</p><p class="dd">Partenaire institutionnel de la première édition — suivi du dossier et participation au jury du Grand Oral.</p></div>
-      </div>
-      <div class="pcard">
-        <div class="im"><img src="/images/part_mairie.jpg" alt="Mairie de Yaoundé II" loading="lazy"></div>
-        <div class="tx"><p class="k">Appui officiel</p><p class="w">Mairie de Yaoundé II</p><p class="dd">Autorisations pour l'Opération Quartier Propre.</p></div>
-      </div>
-      <div class="pcard">
-        <div class="im" style="padding:14px;background:#fff;display:grid;place-items:center"><img src="/images/part_spw.jpg" alt="Service public de Wallonie" loading="lazy" style="object-fit:contain;max-height:120px"></div>
-        <div class="tx"><p class="k">Accompagnement méthodologique</p><p class="w">L'Odyssée de l'Objet en 48 h</p><p class="dd">Concours d'innovation industrielle — transmission des outils méthodologiques imposés aux équipes en sprint.</p></div>
-      </div>
-    </div>
+    <ul class="inst">
+      <li><div class="ph"><img src="/images/part_minresi.jpg" alt="Au MINRESI, avec le Professeur Eddy L. M. Ngonkeu" loading="lazy"></div><p class="role">Haut patronage scientifique</p><h3>MINRESI</h3><p>Ministère de la Recherche scientifique et de l'Innovation.</p></li>
+      <li><div class="ph"><img src="/images/part_ambassade.jpg" alt="À l'Ambassade de Belgique au Cameroun" loading="lazy" style="object-position:50% 30%"></div><p class="role">Parrainage diplomatique</p><h3>Ambassade de Belgique au Cameroun</h3><p>Suivi du dossier et participation au jury du Grand Oral.</p></li>
+      <li><div class="ph"><img src="/images/part_mairie.jpg" alt="Mairie de Yaoundé II" loading="lazy"></div><p class="role">Appui officiel</p><h3>Mairie de Yaoundé II</h3><p>Autorisations pour l'Opération Quartier Propre.</p></li>
+      <li><div class="ph logo"><img src="/images/part_spw.jpg" alt="Logo de L'Odyssée de l'Objet en 48 h" loading="lazy"></div><p class="role">Accompagnement méthodologique</p><h3>Service public de Wallonie</h3><p>Transmission des outils méthodologiques imposés aux équipes en sprint.</p></li>
+    </ul>
   </div>
 </section>
 
-<section class="b-ochre" id="contact">
-  <div class="wrap" style="max-width:680px;text-align:center">
-    <p class="eyebrow" style="justify-content:center;color:#B36A12">Contact</p>
-    <h2 style="margin-bottom:14px">Écrivez-nous.</h2>
-    <p class="muted" style="margin-bottom:22px">Bénévolat, partenariat local, soutien à la prochaine édition : une ligne suffit.</p>
-    <a class="btn btn-ochre" href="mailto:contact@odyssee-env.org">contact@odyssee-env.org</a>
-    <p class="muted" style="margin-top:18px;font-size:15px"><a href="tel:+32465339448" style="color:var(--forest);font-weight:500">+32 465 33 94 48</a></p>
+<section class="on-dark" id="contact">
+  <div class="wrap contact">
+    <div>
+      <h2>Écrivez-nous.</h2>
+      <p class="lead" style="margin-top:18px">Bénévolat, partenariat local, soutien à la prochaine édition : une ligne suffit.</p>
+    </div>
+    <ul class="coord">
+      <li><span class="k">Courriel</span><a href="mailto:contact@odyssee-env.org">contact@odyssee-env.org</a></li>
+      <li><span class="k">Téléphone</span><a href="tel:+32465339448">+32 465 33 94 48</a></li>
+    </ul>
   </div>
 </section>
 
@@ -304,16 +298,14 @@
   <div class="wrap foot">
     <div>
       <b>L'Odyssée de l'environnement</b>
-      Yaoundé · Cameroun
-      <p class="legal-foot">Porté par L'Odyssée de l'environnement ASBL · BCE 1040.785.551 · <a href="https://odyssee-env.org/mentions-legales.html">Mentions légales</a></p>
+      Porté par L'Odyssée de l'environnement ASBL, BCE 1040.785.551
     </div>
-    <div style="text-align:right">
-      <nav class="foot-links">
-        <a href="https://odyssee-env.org/">odyssee-env.org</a>
-        <a href="https://odyssee-env.org/carte-ambassadeur.html">Carte d'ambassadeur</a>
-        <a href="https://odyssee-env.org/politique-confidentialite.html">Confidentialité</a>
-      </nav>
-    </div>
+    <nav class="foot-links" aria-label="Liens">
+      <a href="https://odyssee-env.org/">odyssee-env.org</a>
+      <a href="https://odyssee-env.org/carte-ambassadeur.html">Carte d'ambassadeur</a>
+      <a href="https://odyssee-env.org/mentions-legales.html">Mentions légales</a>
+      <a href="https://odyssee-env.org/politique-confidentialite.html">Confidentialité</a>
+    </nav>
   </div>
 </footer>
 
