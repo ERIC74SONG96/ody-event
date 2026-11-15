@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yaoundé Green Hackathon 2027</title>
+<meta name="description" content="Yaoundé Green Hackathon 2027 : 10 équipes d'étudiant·e·s, un problème environnemental réel de Yaoundé, 90 jours pour innover. Finale en juin 2027. Candidatures jusqu'au 31 décembre 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+--orange:#f5821f; --orange-dark:#c45f0a; --ink:#13252b; --muted:#4a5559;
+--green:#14463a; --green-2:#1f6b52; --green-soft:#eaf3ee; --line:#e3e6e4; --grey:#efefef;
+--max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Nunito,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:17px}
+h1,h2,h3{margin:0;line-height:1.15;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+a{color:var(--orange-dark)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:10px;padding-bottom:4px}
+.tab{position:relative;font-weight:700;font-size:18px;color:var(--ink);text-decoration:none;padding-bottom:6px;border-bottom:3px solid var(--orange)}
+.tab::after{content:"";position:absolute;left:50%;bottom:-10px;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--orange)}
+.pill{background:var(--grey);color:var(--orange-dark);font-weight:700;padding:10px 18px;border-radius:999px;text-decoration:none;font-size:16px}
+.pill:hover{background:#e4e4e4}
+.brandbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;padding-top:26px;padding-bottom:26px;flex-wrap:wrap}
+.logos{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.logos a{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--green);font-weight:800;font-size:14px;line-height:1.2}
+.logo-ygh{width:320px;max-width:70vw;height:auto}
+.sep{width:1px;height:70px;background:var(--line)}
+.social{display:flex;gap:16px}
+.social a{color:var(--ink);display:flex}
+.social a:hover{color:var(--green-2)}
+.menu{background:var(--orange)}
+.menu ul{list-style:none;margin:0 auto;padding:0 22px;max-width:var(--max);display:flex;justify-content:space-between;flex-wrap:wrap}
+.menu a{display:block;padding:22px 4px;color:var(--ink);text-decoration:none;font-weight:800;font-size:19px;text-transform:uppercase;letter-spacing:.3px}
+.menu a:hover,.menu a[aria-current="true"]{color:#fff}
+.pagehead{padding-top:34px;padding-bottom:10px}
+.crumb{font-weight:700;font-size:18px;color:var(--orange-dark);text-decoration:none}
+.crumb span{margin-left:8px}
+.pagehead h1{font-size:clamp(34px,5vw,46px);font-weight:900;text-transform:uppercase;margin-top:12px}
+.intro{margin:22px 0 10px;background:var(--green);color:#fff;border-radius:6px;padding:34px;display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:center}
+.intro p.lead{font-size:20px;color:#e3efe8}
+.intro .facts{display:flex;flex-direction:column;gap:10px}
+.fact{background:rgba(255,255,255,.08);border-left:4px solid var(--orange);padding:10px 14px;font-weight:700}
+.fact small{display:block;font-weight:600;color:#cfe2d7;font-size:14px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-block;padding:13px 22px;border-radius:4px;font-weight:800;text-decoration:none;text-transform:uppercase;font-size:15px;letter-spacing:.3px}
+.btn-orange{background:var(--orange);color:var(--ink)}
+.btn-orange:hover{background:#ff9536}
+.btn-line{border:2px solid #fff;color:#fff}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-2)}
+section.block{padding:54px 0}
+section.soft{background:var(--green-soft)}
+h2.sec{font-size:clamp(26px,3.4vw,34px);font-weight:900;text-transform:uppercase;color:var(--ink);margin-bottom:8px}
+h2.sec::after{content:"";display:block;width:64px;height:4px;background:var(--orange);margin-top:12px}
+.sub{color:var(--muted);max-width:780px;margin:14px 0 30px;font-size:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.card{background:#fff;border:1px solid var(--line);border-top:5px solid var(--green);border-radius:4px;padding:24px}
+.card .num{font-size:42px;font-weight:900;color:var(--orange)}
+.card h3{font-size:21px;font-weight:800;margin:4px 0 8px;color:var(--green)}
+.card p,.card li{color:var(--muted)}
+ul.clean{margin:0;padding-left:20px}
+ul.clean li{margin:5px 0}
+.timeline{list-style:none;margin:0;padding:0;border-left:3px solid var(--green)}
+.timeline li{position:relative;padding:0 0 24px 26px}
+.timeline li::before{content:"";position:absolute;left:-10px;top:5px;width:17px;height:17px;border-radius:50%;background:#fff;border:4px solid var(--orange)}
+.timeline li.final::before{background:var(--orange)}
+.when{font-weight:900;color:var(--green);font-size:18px}
+.score{display:grid;grid-template-columns:7fr 3fr;border-radius:4px;overflow:hidden;font-weight:700}
+.score div{padding:20px 22px}
+.score .a{background:var(--green);color:#fff}
+.score .b{background:var(--orange);color:var(--ink)}
+.score span{display:block;font-size:34px;font-weight:900}
+.prizes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:end}
+.prize{background:#fff;border:1px solid var(--line);border-top:5px solid var(--green);border-radius:4px;padding:22px;text-align:center}
+.prize.p1{border-top-color:var(--orange);padding-block:34px}
+.prize .rank{font-weight:800;text-transform:uppercase;color:var(--muted);font-size:15px;letter-spacing:.4px}
+.prize .amt{font-size:clamp(28px,3.6vw,40px);font-weight:900;color:var(--green);line-height:1.1;margin-top:6px}
+.prize.p1 .amt{color:var(--orange-dark)}
+.prize .cur{font-weight:800;color:var(--muted);font-size:14px}
+details.faq{background:#fff;border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:4px;padding:16px 20px;margin-bottom:12px}
+details.faq summary{cursor:pointer;font-weight:800;font-size:18px}
+details.faq p{margin-top:10px;color:var(--muted)}
+.cta{background:var(--orange);padding:44px 0}
+.cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.cta h2{font-size:clamp(24px,3.4vw,34px);font-weight:900;text-transform:uppercase;color:var(--ink)}
+footer{background:var(--green);color:#d6e6dc;padding:34px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+footer a{color:#ffb36b}
+footer strong{color:#fff}
+@media (max-width:860px){
+.grid3,.grid2,.intro,.prizes{grid-template-columns:1fr}
+.score{grid-template-columns:1fr}
+.menu ul{justify-content:flex-start;gap:0 18px}
+.menu a{padding:14px 2px;font-size:16px}
+.sep{display:none}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+<div class="wrap">
+<a class="tab" href="#concours">Tout public</a>
+<a class="pill" href="https://odyssee-env.org/">odyssee-env.org</a>
+</div>
+</div>
+<header class="brandbar">
+<div class="wrap">
+<div class="logos">
+<a href="../" aria-label="L'Odyssée de l'environnement – accueil">
+<svg width="62" height="62" viewBox="0 0 231 231" aria-hidden="true"><circle cx="115.5" cy="115.5" r="115.5" fill="#f2c230"/><path d="M59,172 C56,108 108,58 179,52 C176,116 124,168 59,172 Z" fill="#14463a"/><line x1="66" y1="165" x2="150" y2="79" stroke="#f2c230" stroke-width="9" stroke-linecap="round"/></svg>
+<span>L'Odyssée de<br>l'environnement</span>
+</a>
+<span class="sep" aria-hidden="true"></span>
+<a href="#concours">
+<svg class="logo-ygh" viewBox="0 -16 580 216" role="img" aria-label="Yaoundé Green Hackathon – 90 jours pour innover">
+<g font-family="Nunito, Arial, sans-serif">
+<text x="4" y="64" font-size="42" font-weight="400" fill="#13252b" letter-spacing="1">YAOUNDÉ GREEN</text>
+<text x="0" y="130" font-size="58" font-weight="800" fill="#14463a" letter-spacing="-1">HACKATHON</text>
+<rect x="52" y="146" width="262" height="26" fill="#f5821f"/>
+<text x="183" y="164" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1">LE DÉFI DE L'INNOVATION VERTE</text>
+</g>
+<g transform="translate(490,92)">
+<path d="M -46 46 A 65 65 0 1 1 46 46" fill="none" stroke="#f5821f" stroke-width="7" stroke-linecap="round"/>
+<path d="M 46 46 l 17 -3 M 46 46 l 3 -17" stroke="#f5821f" stroke-width="7" stroke-linecap="round" fill="none"/>
+<g stroke="#f5821f" stroke-width="3" stroke-linecap="round">
+<line x1="0" y1="-52" x2="0" y2="-44"/><line x1="52" y1="0" x2="44" y2="0"/><line x1="-52" y1="0" x2="-44" y2="0"/><line x1="37" y1="-37" x2="31" y2="-31"/><line x1="-37" y1="-37" x2="-31" y2="-31"/>
+</g>
+<text x="0" y="16" font-family="Nunito, Arial, sans-serif" font-size="46" font-weight="900" fill="#13252b" text-anchor="middle">90</text>
+<text x="0" y="38" font-family="Nunito, Arial, sans-serif" font-size="14" font-weight="800" fill="#f5821f" text-anchor="middle" letter-spacing="1">JOURS</text>
+<g transform="translate(0,-66) rotate(-20)">
+<path d="M0,10 C-14,-2 -10,-22 0,-28 C10,-22 14,-2 0,10 Z" fill="#14463a"/>
+<line x1="0" y1="8" x2="0" y2="-22" stroke="#7fbf5a" stroke-width="2"/>
+</g>
+</g>
+</svg>
+</a>
+</div>
+<div class="social">
+<a href="[LIEN INSTAGRAM]" aria-label="Instagram"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+<a href="[LIEN LINKEDIN]" aria-label="LinkedIn"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm2.5 7v8h2.6v-8H6.5zm1.3-4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 10v8h2.6v-4.3c0-1.2.6-1.9 1.5-1.9s1.4.6 1.4 1.9V18H19v-4.9c0-2.4-1.3-3.3-3-3.3-1.3 0-2 .6-2.4 1.2V10H11z"/></svg></a>
+<a href="[LIEN FACEBOOK]" aria-label="Facebook"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-4.5v-7h2.4l.4-2.8h-2.8V9.4c0-.8.3-1.4 1.4-1.4h1.5V5.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.6 1.3-3.6 3.7v2.1H9.6V14H12v7H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/></svg></a>
+<a href="[LIEN YOUTUBE]" aria-label="YouTube"><svg width="34" height="30" viewBox="0 0 28 24" fill="currentColor"><path d="M27 6.5a3.4 3.4 0 0 0-2.4-2.4C22.5 3.5 14 3.5 14 3.5s-8.5 0-10.6.6A3.4 3.4 0 0 0 1 6.5C.5 8.6.5 12 .5 12s0 3.4.5 5.5a3.4 3.4 0 0 0 2.4 2.4c2.1.6 10.6.6 10.6.6s8.5 0 10.6-.6a3.4 3.4 0 0 0 2.4-2.4c.5-2.1.5-5.5.5-5.5s0-3.4-.5-5.5zM11.3 15.8V8.2L18.3 12l-7 3.8z"/></svg></a>
+</div>
+</div>
+</header>
+<nav class="menu" aria-label="Navigation du hackathon">
+<ul>
+<li><a href="#concours" aria-current="true">Le concours</a></li>
+<li><a href="#programme">Programme</a></li>
+<li><a href="#participer">Participer</a></li>
+<li><a href="#rejoindre">Partenaires</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+<main>
+<div class="wrap pagehead" id="concours">
+<a class="crumb" href="../">Cameroun<span aria-hidden="true">›</span></a>
+<h1>Yaoundé Green Hackathon 2027</h1>
+<div class="intro">
+<div>
+<p class="lead">Dix équipes d'étudiant·e·s, un problème environnemental réel de Yaoundé, et 90 jours pour y répondre. La finale se tient devant un jury de professionnels, avec un défi surprise.</p>
+<div class="btns">
+<a class="btn btn-orange" href="https://forms.cloud.microsoft/e/PWVp22ZkW8">Je candidate</a>
+<a class="btn btn-line" href="#rejoindre">Devenir mentor ou partenaire</a>
+</div>
+</div>
+<div class="facts">
+<div class="fact"><small>Finale</small>Juin 2027 · date annoncée prochainement</div>
+<div class="fact"><small>Lieu</small>Yaoundé · annoncé prochainement</div>
+<div class="fact"><small>Candidatures</small>Jusqu'au 31 décembre 2026 · gratuit</div>
+</div>
+</div>
+</div>
+<section class="block">
+<div class="wrap">
+<h2 class="sec">Le concours</h2>
+<p class="sub">Un hackathon de trois mois, pas de trois heures : les équipes ont le temps de comprendre le problème, d'aller sur le terrain et de construire une solution solide.</p>
+<div class="grid3">
+<div class="card"><div class="num">1</div><h3>Forme ton équipe</h3><p>Cinq étudiant·e·s, idéalement de disciplines différentes. Seul·e ? Candidate quand même, nous t'aidons à trouver une équipe.</p></div>
+<div class="card"><div class="num">2</div><h3>Trois mois pour innover</h3><p>Un problème commun à toutes les équipes, publié environ trois mois avant la finale. Un rapport de type universitaire et un prototype (une maquette ou un schéma fonctionnel suffisent).</p></div>
+<div class="card"><div class="num">3</div><h3>La finale</h3><p>En juin 2027 à Yaoundé : présentation devant le jury, et un défi surprise que personne ne connaît à l'avance.</p></div>
+</div>
+</div>
+</section>
+<section class="block soft" id="programme">
+<div class="wrap grid2">
+<div>
+<h2 class="sec">Programme</h2>
+<p class="sub">Les grandes étapes de l'édition 2027.</p>
+<ol class="timeline">
+<li><div class="when">Jusqu'au 31 décembre 2026</div><p>Candidatures en ligne, par équipe ou individuellement.</p></li>
+<li><div class="when">Janvier 2027</div><p>Sélection des 10 équipes et constitution des équipes pour les candidatures individuelles.</p></li>
+<li><div class="when">Mars 2027</div><p>Publication du problème à résoudre et début des 90 jours.</p></li>
+<li><div class="when">Mars – juin 2027</div><p>Préparation des équipes : enquête de terrain, rapport et prototype.</p></li>
+<li class="final"><div class="when">Juin 2027</div><p>Finale à Yaoundé : présentations, défi surprise, palmarès et réception.</p></li>
+</ol>
+</div>
+<div>
+<h2 class="sec">Évaluation</h2>
+<p class="sub">La note sur 100 récompense à la fois le travail de fond et la capacité à s'adapter.</p>
+<div class="score">
+<div class="a"><span>70 pts</span>Travail préparé : rapport, prototype et présentation</div>
+<div class="b"><span>30 pts</span>Défi surprise</div>
+</div>
+<p style="margin-top:16px;color:var(--muted)">Le règlement complet du concours est communiqué aux équipes sélectionnées.</p>
+</div>
+</div>
+</section>
+<section class="block" id="participer">
+<div class="wrap">
+<h2 class="sec">Participer</h2>
+<p class="sub">Le format est né à Yaoundé en 2026. En 2027, chaque pays organise sa propre édition : Kinshasa, Bruxelles et cette deuxième édition à Yaoundé.</p>
+<div class="grid2">
+<div class="card"><h3>Pour qui ?</h3><ul class="clean"><li>Les étudiant·e·s des universités et grandes écoles du Cameroun.</li><li>Toutes les disciplines : sciences, ingénierie, environnement, économie, droit, urbanisme, sciences sociales, design…</li><li>10 équipes de cinq sont sélectionnées.</li></ul></div>
+<div class="card"><h3>Ce que tu y gagnes</h3><ul class="clean"><li>Des prix en argent pour les meilleures équipes, et d'autres prix avec les partenaires.</li><li>La rencontre d'entreprises et d'institutions engagées, qui peuvent proposer stages ou partenariats après la finale.</li><li>Une expérience concrète à valoriser dans ton parcours.</li></ul></div>
+</div>
+<div class="prizes" style="margin-top:26px">
+<div class="prize"><div class="rank">2<sup>e</sup> prix</div><div class="amt">300 000</div><div class="cur">FCFA</div></div>
+<div class="prize p1"><div class="rank">1<sup>er</sup> prix</div><div class="amt">500 000</div><div class="cur">FCFA</div></div>
+<div class="prize"><div class="rank">3<sup>e</sup> prix</div><div class="amt">150 000</div><div class="cur">FCFA</div></div>
+</div>
+</div>
+</section>
+<section class="block soft" id="rejoindre">
+<div class="wrap">
+<h2 class="sec">Partenaires et contributeurs</h2>
+<p class="sub">Le Yaoundé Green Hackathon se construit avec celles et ceux qui veulent faire avancer l'innovation environnementale à Yaoundé. La première édition a été reconnue par l'Ambassade de Belgique au Cameroun, le MINRESI et la Mairie de Yaoundé II.</p>
+<div class="grid3">
+<div class="card"><h3>Mentors et jury</h3><p>Enseignant·e, chercheur·e, doctorant·e ou professionnel·le de l'environnement ? Relis les rapports des équipes, ou siège au jury de la finale.</p><div class="btns"><a class="btn btn-green" href="mailto:contact@odyssee-env.org?subject=Yaound%C3%A9%20Green%20Hackathon%20%E2%80%93%20Mentor%20ou%20jury">Proposer mon aide</a></div></div>
+<div class="card"><h3>Partenaires</h3><p>Entreprises, institutions, fondations : soutenez l'événement, en financement ou en nature, et recevez notre dossier de partenariat. Formules à partir de 500 000 FCFA.</p><div class="btns"><a class="btn btn-green" href="mailto:contact@odyssee-env.org?subject=Yaound%C3%A9%20Green%20Hackathon%20%E2%80%93%20Partenariat">Demander le dossier</a></div></div>
+<div class="card"><h3>Bénévoles</h3><p>Logistique, communication, relations avec les universités, accueil le jour J : rejoins l'équipe d'organisation à Yaoundé, quelques heures par semaine.</p><div class="btns"><a class="btn btn-green" href="mailto:contact@odyssee-env.org?subject=Yaound%C3%A9%20Green%20Hackathon%20%E2%80%93%20B%C3%A9n%C3%A9volat">Je deviens bénévole</a></div></div>
+</div>
+</div>
+</section>
+<section class="block" id="faq">
+<div class="wrap">
+<h2 class="sec">FAQ</h2>
+<p class="sub">Les questions qu'on nous pose le plus souvent.</p>
+<details class="faq"><summary>La participation est-elle payante ?</summary><p>Non, la participation est gratuite pour les étudiant·e·s sélectionné·e·s.</p></details>
+<details class="faq"><summary>Je n'ai pas d'équipe, puis-je candidater ?</summary><p>Oui. Choisis « candidature individuelle » dans le formulaire : nous constituons des équipes avec les candidat·e·s individuel·le·s.</p></details>
+<details class="faq"><summary>Faut-il savoir programmer ?</summary><p>Non. Le prototype peut être une maquette ou un schéma fonctionnel. Les compétences variées (terrain, économie, communication, design, technique) sont un atout.</p></details>
+<details class="faq"><summary>Combien de temps faut-il y consacrer ?</summary><p>Le travail s'étale sur trois mois, de mars à juin 2027, à organiser au sein de l'équipe, jusqu'à la finale à Yaoundé.</p></details>
+<details class="faq"><summary>Comment les équipes sont-elles sélectionnées ?</summary><p>Sur la base du formulaire : motivation, complémentarité des profils et disponibilité. Les résultats sont annoncés par e-mail en janvier 2027.</p></details>
+<details class="faq"><summary>Les entreprises partenaires influencent-elles le classement ?</summary><p>Non. Elles peuvent proposer des stages ou des partenariats après la finale, mais seul le jury établit le classement.</p></details>
+</div>
+</section>
+<section class="cta">
+<div class="wrap">
+<h2>Candidatures jusqu'au 31 décembre 2026</h2>
+<a class="btn btn-green" href="https://forms.cloud.microsoft/e/PWVp22ZkW8">Je candidate</a>
+</div>
+</section>
+</main>
+<footer id="contact">
+<div class="wrap">
+<div><strong>L'Odyssée de l'environnement au Cameroun</strong><br>Yaoundé · avec l'ASBL L'Odyssée de l'environnement (BCE 1040.785.551)</div>
+<div><a href="mailto:contact@odyssee-env.org">contact@odyssee-env.org</a></div>
+</div>
+</footer>
+</body>
+</html>
